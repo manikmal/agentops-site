@@ -462,8 +462,21 @@ h3 {
 .timeline-step:hover,
 .portfolio-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(4, 217, 217, 0.65);
-  box-shadow: var(--shadow);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1px rgba(4, 217, 217, 0.7),
+    0 0 20px rgba(4, 217, 217, 0.35),
+    0 0 60px rgba(4, 217, 217, 0.12),
+    var(--shadow);
+}
+
+.package-card.featured:hover {
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1px rgba(164, 246, 63, 0.7),
+    0 0 20px rgba(164, 246, 63, 0.35),
+    0 0 60px rgba(164, 246, 63, 0.12),
+    var(--shadow);
 }
 
 .agent-card span,
@@ -531,6 +544,10 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: 0 18px 50px rgba(8, 10, 10, 0.06);
+}
+
+.portfolio-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .wide-card {
