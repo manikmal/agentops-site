@@ -145,13 +145,19 @@ function resizeCanvas() {
 
 function createParticles(width, height) {
   const count = width < 720 ? 42 : 82;
-  particles = Array.from({ length: count }, () => ({
-    x: Math.random() * width,
-    y: Math.random() * height,
-    vx: (Math.random() - 0.5) * 0.42,
-    vy: (Math.random() - 0.5) * 0.42,
-    radius: Math.random() * 1.8 + 1
-  }));
+  particles = Array.from({ length: count }, () => {
+    const vx = (Math.random() - 0.5) * 0.42;
+    const vy = (Math.random() - 0.5) * 0.42;
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx,
+      vy,
+      baseVx: vx,
+      baseVy: vy,
+      radius: Math.random() * 1.8 + 1
+    };
+  });
 }
 
 function drawNetwork() {
@@ -169,6 +175,25 @@ function drawNetwork() {
 
     if (particle.x < 0 || particle.x > width) particle.vx *= -1;
     if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+
+    const mdx = particle.x - mouse.x;
+    const mdy = particle.y - mouse.y;
+    const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+    if (mdist < 120 && mdist > 0) {
+      const force = ((120 - mdist) / 120) * 0.6;
+      particle.vx += (mdx / mdist) * force;
+      particle.vy += (mdy / mdist) * force;
+    }
+
+    const speed = Math.sqrt(particle.vx * particle.vx + particle.vy * particle.vy);
+    if (speed > 3) {
+      particle.vx = (particle.vx / speed) * 3;
+      particle.vy = (particle.vy / speed) * 3;
+    }
+
+    particle.vx += (particle.baseVx - particle.vx) * 0.02;
+    particle.vy += (particle.baseVy - particle.vy) * 0.02;
   }
 
   for (let i = 0; i < particles.length; i += 1) {
@@ -200,6 +225,20 @@ function drawNetwork() {
 
   animationFrame = requestAnimationFrame(drawNetwork);
 }
+
+const mouse = { x: -999, y: -999 };
+
+window.addEventListener("mousemove", (event) => {
+  if (!canvas) return;
+  const rect = canvas.getBoundingClientRect();
+  mouse.x = event.clientX - rect.left;
+  mouse.y = event.clientY - rect.top;
+});
+
+window.addEventListener("mouseleave", () => {
+  mouse.x = -999;
+  mouse.y = -999;
+});
 
 if (canvas && context) {
   resizeCanvas();
