@@ -74,33 +74,30 @@ textarea {
   font-weight: 800;
 }
 
-.brand-stack {
-  display: grid;
-  gap: 1px;
+
+.brand-logo {
+  height: 38px;
+  width: auto;
+  display: block;
 }
 
-.brand-stack strong,
-.brand-stack small {
-  line-height: 1.05;
-}
-
-.brand-stack small {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.72rem;
+.brand-byline {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.7rem;
   font-weight: 700;
-}
-
-.brand-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.footer-logo {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .site-nav {
@@ -790,8 +787,8 @@ h3 {
     padding: 112px 18px 56px;
   }
 
-  .brand span:last-child {
-    max-width: 160px;
+  .brand-logo {
+    height: 30px;
   }
 
   h1 {
