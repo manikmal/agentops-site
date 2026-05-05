@@ -379,6 +379,7 @@ h3 {
 
 .logo-strip {
   overflow: hidden;
+  white-space: nowrap;
   padding: 20px 0;
   background: var(--white);
   border-bottom: 1px solid var(--line);
@@ -392,7 +393,8 @@ h3 {
   will-change: transform;
 }
 
-.logo-strip:hover .marquee-track {
+.logo-strip:hover .marquee-track,
+.logo-strip:focus-within .marquee-track {
   animation-play-state: paused;
 }
 
