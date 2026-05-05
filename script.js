@@ -74,6 +74,7 @@ function easeOut(t) {
 }
 
 function animateCounter(el) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const start = parseInt(el.dataset.counterStart, 10);
   const end = parseInt(el.dataset.counterEnd, 10);
   const suffix = el.dataset.counterSuffix ?? '';
@@ -100,10 +101,10 @@ const counterObserver = new IntersectionObserver(
       }
     }
   },
-  { threshold: 0.5 }
+  { threshold: 0.16 }
 );
 
-document.querySelectorAll('[data-counter-end]').forEach((el) => counterObserver.observe(el));
+document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
 document.querySelectorAll(".agent-card, .portfolio-card, .package-card, .devops-card").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
