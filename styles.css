@@ -378,13 +378,42 @@ h3 {
 }
 
 .logo-strip {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 24px;
+  overflow: hidden;
+  padding: 20px 0;
   background: var(--white);
   border-bottom: 1px solid var(--line);
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 10px;
+  padding: 0 5px;
+  animation: marquee 18s linear infinite;
+  will-change: transform;
+}
+
+.logo-strip:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-strip {
+    overflow: visible;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 24px;
+    gap: 10px;
+  }
+  .marquee-track {
+    animation: none;
+    display: contents;
+  }
 }
 
 .logo-strip span {

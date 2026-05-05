@@ -4,6 +4,15 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const leadForm = document.querySelector("[data-lead-form]");
 const formStatus = document.querySelector("[data-form-status]");
 
+const marqueeTrack = document.querySelector(".marquee-track");
+if (marqueeTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  Array.from(marqueeTrack.children).forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    marqueeTrack.appendChild(clone);
+  });
+}
+
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("is-open");
