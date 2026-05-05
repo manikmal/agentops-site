@@ -91,13 +91,16 @@ textarea {
 }
 
 .brand-mark {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  color: var(--ink);
-  background: linear-gradient(135deg, var(--cyan), var(--lime));
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .site-nav {
