@@ -69,6 +69,42 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
+function easeOut(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+function animateCounter(el) {
+  const start = parseInt(el.dataset.counterStart, 10);
+  const end = parseInt(el.dataset.counterEnd, 10);
+  const suffix = el.dataset.counterSuffix ?? '';
+  const duration = 1200;
+  const startTime = performance.now();
+
+  function tick(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.round(start + (end - start) * easeOut(progress));
+    el.textContent = value + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+}
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    }
+  },
+  { threshold: 0.5 }
+);
+
+document.querySelectorAll('[data-counter-end]').forEach((el) => counterObserver.observe(el));
+
 document.querySelectorAll(".agent-card, .portfolio-card, .package-card, .devops-card").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
