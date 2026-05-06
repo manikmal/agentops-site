@@ -440,7 +440,6 @@ h3 {
 
 .agent-grid,
 .portfolio-grid,
-.package-grid,
 .devops-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -449,7 +448,6 @@ h3 {
 
 .agent-card,
 .devops-card,
-.package-card,
 .mini-card,
 .timeline-step {
   min-height: 220px;
@@ -463,7 +461,6 @@ h3 {
 
 .agent-card:hover,
 .devops-card:hover,
-.package-card:hover,
 .mini-card:hover,
 .timeline-step:hover,
 .portfolio-card:hover {
@@ -473,15 +470,6 @@ h3 {
     0 0 0 1px rgba(4, 217, 217, 0.7),
     0 0 20px rgba(4, 217, 217, 0.35),
     0 0 60px rgba(4, 217, 217, 0.12),
-    var(--shadow);
-}
-
-.package-card.featured:hover {
-  border-color: transparent;
-  box-shadow:
-    0 0 0 1px rgba(164, 246, 63, 0.7),
-    0 0 20px rgba(164, 246, 63, 0.35),
-    0 0 60px rgba(164, 246, 63, 0.12),
     var(--shadow);
 }
 
@@ -496,7 +484,6 @@ h3 {
 
 .agent-card p,
 .devops-card p,
-.package-card p,
 .mini-card p,
 .timeline-step p,
 .portfolio-card p {
@@ -605,29 +592,6 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
-}
-
-.packages-section {
-  background: var(--white);
-}
-
-.package-card {
-  min-height: 260px;
-}
-
-.package-card strong {
-  display: block;
-  margin-top: 28px;
-}
-
-.package-card.featured {
-  color: var(--white);
-  background: var(--charcoal);
-  border-color: var(--charcoal);
-}
-
-.package-card.featured p {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-section {
@@ -762,7 +726,6 @@ h3 {
 
   .agent-grid,
   .portfolio-grid,
-  .package-grid,
   .devops-grid,
   .timeline,
   .social-grid {
@@ -816,15 +779,10 @@ h3 {
 
   .agent-grid,
   .portfolio-grid,
-  .package-grid,
   .devops-grid,
   .timeline,
   .social-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-metrics span {
-    width: 100%;
   }
 
   .flow-row {
