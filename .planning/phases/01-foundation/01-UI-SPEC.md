@@ -68,17 +68,19 @@ Exceptions:
 
 ### Type Scale
 
-Fluid sizes using `clamp()` — no breakpoint-scoped `font-size` overrides. All values locked in CONTEXT.md D-09 and D-10.
+4 tiers. Fluid heading sizes use `clamp()` — no breakpoint-scoped `font-size` overrides. All values locked in CONTEXT.md D-09 and D-10.
 
-| Role | CSS Size | Weight | Line Height | Letter Spacing | Token |
-|------|----------|--------|-------------|----------------|-------|
-| Display / H1 | `clamp(2.5rem, 5vw + 1rem, 5rem)` | 700 | 1.02 | `var(--tracking-tight)` = `-0.04em` | heading |
-| H2 | `clamp(1.75rem, 3vw + 0.75rem, 3rem)` | 700 | 1.06 | `var(--tracking-heading)` = `-0.03em` | heading |
-| H3 | `clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem)` | 600 | 1.3 | `var(--tracking-heading)` = `-0.03em` | heading |
-| Body large | `1.125rem` (18px) | 400 | 1.65 | none | body |
-| Body default | `1rem` (16px) | 400 | 1.6 | none | body |
-| Body small | `0.875rem` (14px) | 400 | 1.55 | none | body |
-| Label / eyebrow | `0.75rem` (12px) | 600 | 1.4 | `0.08em` (positive, uppercase) | label |
+| Tier | Role | CSS Size | Weight | Line Height | Letter Spacing | Token |
+|------|------|----------|--------|-------------|----------------|-------|
+| 1 — Headings (fluid family) | Display / H1 | `clamp(2.5rem, 5vw + 1rem, 5rem)` | 700 | 1.02 | `var(--tracking-tight)` = `-0.04em` | heading |
+| 1 — Headings (fluid family) | H2 | `clamp(1.75rem, 3vw + 0.75rem, 3rem)` | 700 | 1.06 | `var(--tracking-heading)` = `-0.03em` | heading |
+| 1 — Headings (fluid family) | H3 | `clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem)` | 600 | 1.3 | `var(--tracking-heading)` = `-0.03em` | heading |
+| 2 — Body | Body default | `1rem` (16px) | 400 | 1.6 | none | body |
+| 3 — Label | Label / eyebrow | `0.75rem` (12px) | 600 | 1.4 | `0.08em` (positive, uppercase) | label |
+
+**Usage variants within the Body tier (not separate scale entries):**
+- Body large (`1.125rem` / 18px, weight 400, line-height 1.65) — hero lede and section introductory paragraphs
+- Body small (`0.875rem` / 14px, weight 400, line-height 1.55) — captions, metadata, nav link labels
 
 **Weights in use: 400 (regular) and 600–700 (semibold/bold) only.**
 
@@ -297,6 +299,10 @@ Labels (in order): Services / Work / Process / About / Contact
 Links to `#contact` (placeholder — Calendly URL pending; known pre-launch blocker).
 
 **Source:** CONTEXT.md D-07; REQUIREMENTS.md HEAD-03
+
+### Hero Section
+
+**Primary focal point:** The H1 headline at Display size (`clamp(2.5rem, 5vw + 1rem, 5rem)`, weight 700, tracking `-0.04em`) is the primary visual anchor. The canvas particle network renders as supporting ambient texture behind the headline and lede — it must not compete visually with the text hierarchy.
 
 ### Hero Placeholder Copy
 
