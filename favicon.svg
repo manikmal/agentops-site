@@ -1,17 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 46">
-  <rect width="40" height="46" rx="6" fill="#080a0a"/>
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#04d9d9"/>
-      <stop offset="100%" stop-color="#a4f63f"/>
-    </linearGradient>
-  </defs>
-  <polygon points="20,2 37,11.5 37,34.5 20,44 3,34.5 3,11.5" fill="none" stroke="url(#g)" stroke-width="2.5" stroke-linejoin="round"/>
-  <polyline points="14,34 20,14 26,34" fill="none" stroke="#04d9d9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <line x1="16" y1="27" x2="24" y2="27" stroke="#04d9d9" stroke-width="2.2" stroke-linecap="round"/>
-  <circle cx="20" cy="14" r="2.2" fill="#a4f63f"/>
-  <circle cx="14" cy="34" r="2.2" fill="#a4f63f"/>
-  <circle cx="26" cy="34" r="2.2" fill="#a4f63f"/>
-  <circle cx="16" cy="27" r="1.6" fill="#04d9d9"/>
-  <circle cx="24" cy="27" r="1.6" fill="#04d9d9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <rect width="40" height="40" rx="8" fill="#080a0a"/>
+  <polygon points="20,3 35,11.5 35,28.5 20,37 5,28.5 5,11.5" fill="none" stroke="#04d9d9" stroke-width="2.2" stroke-linejoin="round"/>
+  <polyline points="14,31 20,13 26,31" fill="none" stroke="#04d9d9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="25" x2="24" y2="25" stroke="#04d9d9" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="20" cy="13" r="2" fill="#a4f63f"/>
+  <circle cx="14" cy="31" r="2" fill="#a4f63f"/>
+  <circle cx="26" cy="31" r="2" fill="#a4f63f"/>
 </svg>
