@@ -75,10 +75,25 @@ textarea {
 }
 
 
-.brand-logo {
-  height: 46px;
-  width: auto;
+.brand-icon {
   display: block;
+  flex-shrink: 0;
+}
+
+.brand-stack {
+  display: grid;
+  gap: 1px;
+}
+
+.brand-stack strong,
+.brand-stack small {
+  line-height: 1.05;
+}
+
+.brand-stack small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 .footer-brand {
@@ -87,10 +102,9 @@ textarea {
   gap: 8px;
 }
 
-.footer-logo {
-  height: 32px;
-  width: auto;
+.footer-icon {
   display: block;
+  flex-shrink: 0;
 }
 
 .site-nav {
@@ -780,8 +794,9 @@ h3 {
     padding: 112px 18px 56px;
   }
 
-  .brand-logo {
-    height: 30px;
+  .brand-icon {
+    width: 28px;
+    height: 28px;
   }
 
   h1 {
