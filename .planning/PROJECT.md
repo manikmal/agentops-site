@@ -2,11 +2,11 @@
 
 ## What This Is
 
-A complete ground-up redesign of the AgentOps Studio website — a solo AI engineering practice run by Manik Malhotra. The new site targets startup founders and product teams who want to hire a single engineer capable of building their full AI product stack: custom AI agents, AI-powered features, infrastructure, and DevOps. The design language is dark, technical, and precise — inspired by Linear.app.
+A complete ground-up redesign of the AgentOps Studio website — a solo AI engineering practice run by Manik Malhotra. The primary audience is SMEs who need social media automations, digital marketing systems, and AI-powered workflows. Startup founders and product teams are a secondary aspirational audience for larger AI product builds. The design is dark, technical, and premium — inspired by Linear.app — to elevate the brand above typical freelancer sites while remaining accessible to SME buyers.
 
 ## Core Value
 
-A startup founder landing on the site should immediately feel they've found a serious technical partner who builds AI products end-to-end — not a freelancer running automations for small businesses.
+An SME owner or startup founder lands on the site and immediately feels they've found a serious, trustworthy technical partner — not a generic freelancer — one who can handle everything from social media automation to full AI product engineering.
 
 ## Requirements
 
