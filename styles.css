@@ -80,20 +80,11 @@ textarea {
   flex-shrink: 0;
 }
 
-.brand-stack {
-  display: grid;
-  gap: 1px;
-}
-
-.brand-stack strong,
-.brand-stack small {
-  line-height: 1.05;
-}
-
-.brand-stack small {
-  color: rgba(255, 255, 255, 0.62);
-  font-size: 0.72rem;
-  font-weight: 700;
+.brand-wordmark {
+  display: block;
+  height: 44px;
+  width: auto;
+  mix-blend-mode: screen;
 }
 
 .footer-brand {
@@ -175,6 +166,14 @@ textarea {
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.7fr);
   gap: 42px;
   align-items: center;
+}
+
+.hero-wordmark {
+  display: block;
+  height: 90px;
+  width: auto;
+  margin-bottom: 24px;
+  mix-blend-mode: screen;
 }
 
 .eyebrow {
@@ -797,6 +796,14 @@ h3 {
   .brand-icon {
     width: 28px;
     height: 28px;
+  }
+
+  .brand-wordmark {
+    height: 34px;
+  }
+
+  .hero-wordmark {
+    height: 64px;
   }
 
   h1 {
