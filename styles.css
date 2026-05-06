@@ -43,9 +43,9 @@
   --color-text-muted:     rgba(255,255,255,0.50);
 
   /* Accent */
-  --color-accent:         var(--violet-600);
-  --color-accent-dim:     var(--violet-dim);
-  --color-accent-hover:   var(--violet-400);
+  --color-accent: var(--violet-600);
+  --color-accent-dim: var(--violet-dim);
+  --color-accent-hover: var(--violet-400);
 
   /* Signal */
   --color-error:          var(--red-400);
