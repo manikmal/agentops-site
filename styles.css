@@ -79,13 +79,7 @@ textarea {
   height: 38px;
   width: auto;
   display: block;
-}
-
-.brand-byline {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.7rem;
-  font-weight: 700;
-  white-space: nowrap;
+  mix-blend-mode: screen;
 }
 
 .footer-brand {
@@ -98,6 +92,7 @@ textarea {
   height: 28px;
   width: auto;
   display: block;
+  mix-blend-mode: screen;
 }
 
 .site-nav {
