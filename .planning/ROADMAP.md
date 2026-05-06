@@ -23,7 +23,11 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
   2. No SME-era language appears anywhere in the codebase: no "automation audit," no "SMEs," no Gmail in hero, no phone number, no service package tiers
   3. Inspecting `styles.css` shows a design tokens block at the top with violet `#7c5cfc` as the sole primary accent, `#0a0a0b` base background, and three dark surface values — before any section CSS
   4. All heading elements on the page render with negative `letter-spacing` and fluid `clamp()` sizes; Inter variable font loads non-blocking
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 01-01-PLAN.md — CSS design system: two-layer token block, fluid typography, iOS Safari header split, violet btn-primary
+- [ ] 01-02-PLAN.md — HTML structure: Inter font loading, header wrapper split, startup nav labels + CTA button, full SME language audit
+- [ ] 01-03-PLAN.md — JS wiring: passive scroll handler, violet card spotlight, active nav IntersectionObserver
 **UI hint**: yes
 
 ### Phase 2: Hero
@@ -81,7 +85,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Not started | - |
 | 2. Hero | 0/TBD | Not started | - |
 | 3. Core Sections | 0/TBD | Not started | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
