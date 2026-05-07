@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 ## Current Position
 
 Phase: 3 of 5 (Core Sections)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Executing
-Last activity: 2026-05-07 — Phase 3 Plan 1 complete (03-01)
+Last activity: 2026-05-07 — Phase 3 Plan 2 complete (03-02)
 
-Progress: [████░░░░░░] 43%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: ~5 min/plan
-- Total execution time: ~15 min
+- Total execution time: ~20 min
 
 **By Phase:**
 
@@ -47,6 +47,7 @@ Recent decisions affecting current work:
 - Pre-launch: Portfolio as styled NDA placeholder cards in v1
 - Pre-launch: Primary CTA = "Book a discovery call" — calendar link required before launch
 - 03-01: Nav Work→#portfolio, Process→#contact, About→#contact per plan spec; hero "View work" button (#portfolio) left untouched
+- 03-02: portfolio-grid changed from repeat(3,1fr) to repeat(2,1fr) for balanced 2+2 card layout; .service-card has no backdrop-filter (iOS Safari constraint)
 
 ### Pending Todos
 
@@ -71,5 +72,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 3 Plan 01 complete — ready for 03-02 (CSS cleanup)
-Resume file: .planning/phases/03-core-sections/03-01-SUMMARY.md
+Stopped at: Phase 3 Plan 02 complete — ready for 03-03 (HTML content: tech strip, services, portfolio)
+Resume file: .planning/phases/03-core-sections/03-02-SUMMARY.md

@@ -68,7 +68,7 @@ Plans:
 - [x] 03-01-PLAN.md — Delete old SME sections, fix nav hrefs (#agents→#services), update spotlight JS selector
 
 **Wave 2** *(depends on 03-01)*
-- [ ] 03-02-PLAN.md — CSS cleanup: remove stale classes, add services CSS block, update marquee speed, extend logo-strip span for SVG
+- [x] 03-02-PLAN.md — CSS cleanup: remove stale classes, add services CSS block, update marquee speed, extend logo-strip span for SVG
 
 **Wave 3** *(depends on 03-01 and 03-02)*
 - [ ] 03-03-PLAN.md — HTML content: 10-pill tech strip, dual-cluster services section, 4 NDA portfolio cards
@@ -107,6 +107,6 @@ Cross-cutting constraints: `.timeline-step` preserved in all compound-selector e
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
-| 3. Core Sections | 1/3 | In Progress | - |
+| 3. Core Sections | 2/3 | In Progress | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
 | 5. Polish | 0/TBD | Not started | - |
