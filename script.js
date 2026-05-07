@@ -72,11 +72,15 @@ if (leadForm) {
       if (!response.ok) throw new Error("Lead submission failed");
 
       leadForm.reset();
-      if (formStatus) formStatus.textContent = "Thanks. Your request has been sent to Manik.";
+      if (formStatus) {
+        formStatus.textContent = "Message sent — I'll be in touch within 24 hours.";
+        formStatus.dataset.state = "success";
+      }
     } catch (error) {
       const email = "manikmalhotra6@gmail.com";
       if (formStatus) {
-        formStatus.innerHTML = `Something went wrong. Please email <a href="mailto:${email}">${email}</a>.`;
+        formStatus.innerHTML = `Something went wrong. Email <a href="mailto:${email}">${email}</a> directly.`;
+        formStatus.dataset.state = "error";
       }
     } finally {
       if (submitButton) submitButton.disabled = false;
@@ -135,7 +139,7 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
-document.querySelectorAll(".service-card, .portfolio-card").forEach((card) => {
+document.querySelectorAll(".service-card, .portfolio-card, .credentials-card").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -431,4 +435,9 @@ if (consoleEl) {
     });
     mo.observe(consoleEl, { attributeFilter: ["class"] });
   }
+}
+
+const copyrightYear = document.getElementById("copyright-year");
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
 }
