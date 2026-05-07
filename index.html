@@ -45,44 +45,56 @@
         <div class="hero-grid">
           <div class="hero-copy reveal">
             <img src="wordmark.png" alt="AgentOps Studio" class="hero-wordmark">
-            <h1>Build AI products that scale.</h1>
-            <p class="hero-lede">End-to-end AI engineering for founders who need it done right.</p>
+            <h1>AI systems built to run your business.</h1>
+            <p class="hero-lede">I engineer the agent pipelines, integrations, and full-stack builds your team needs to scale.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Book a discovery call</a>
               <a class="btn btn-secondary" href="#portfolio">View work</a>
             </div>
+            <p class="scarcity-signal" aria-live="polite">
+              <span class="scarcity-dot" aria-hidden="true"></span>
+              Currently taking 1–2 new projects
+            </p>
           </div>
-          <div class="ops-console reveal" aria-label="Live automation console preview">
+          <div class="ops-console reveal" aria-label="Live automation console preview" data-agent-trace>
             <div class="console-top">
               <span></span>
               <span></span>
               <span></span>
-              <strong>live-agent-flow</strong>
+              <strong data-console-label>startup-pipeline</strong>
             </div>
             <div class="console-body">
               <div class="flow-row active">
                 <span class="flow-dot"></span>
                 <div>
                   <strong>Orchestrator</strong>
-                  <p>Deployment pipeline triggered on merge to main.</p>
+                  <p>Merge detected on main</p>
                 </div>
-                <em>2s</em>
+                <em>0s</em>
               </div>
               <div class="flow-row">
                 <span class="flow-dot"></span>
                 <div>
-                  <strong>Data Agent</strong>
-                  <p>User event batch ingested and routed to analytics sink.</p>
+                  <strong>Build Agent</strong>
+                  <p>Compiling and bundling</p>
                 </div>
-                <em>8s</em>
+                <em>•</em>
               </div>
               <div class="flow-row">
                 <span class="flow-dot"></span>
                 <div>
-                  <strong>Monitoring Agent</strong>
-                  <p>Latency spike detected — alert dispatched to on-call.</p>
+                  <strong>Test Agent</strong>
+                  <p>Running integration suite</p>
                 </div>
-                <em>1s</em>
+                <em>•</em>
+              </div>
+              <div class="flow-row">
+                <span class="flow-dot"></span>
+                <div>
+                  <strong>Deploy Agent</strong>
+                  <p>Pushing to production</p>
+                </div>
+                <em>•</em>
               </div>
             </div>
           </div>
