@@ -1,19 +1,16 @@
 ---
 phase: 02-hero
-verified: 2026-05-07T00:00:00Z
-status: gaps_found
-score: 4/5 must-haves verified
+verified: 2026-05-07T12:00:00Z
+status: human_needed
+score: 5/5 must-haves verified
 overrides_applied: 0
-gaps:
-  - truth: "Canvas particle system pauses when the tab is hidden (SC-4 partial)"
-    status: partial
-    reason: "CR-01: The visibilitychange handler calls drawNetwork() on tab-visible without first cancelling any existing rAF handle. initCanvas() (called by requestIdleCallback, up to 2s after load) also calls drawNetwork() without a prior cancelAnimationFrame. If a user hides the tab before rIC fires, the visible-branch starts loop A (animationFrame = id_A), then rIC fires and starts loop B (animationFrame = id_B). Loop A runs forever — cancelAnimationFrame(animationFrame) only cancels id_B. The basic pause path (cancel on hidden) is wired correctly; the race condition on re-show leaves an orphaned rAF loop. Documented as critical finding CR-01 in 02-REVIEW.md."
-    artifacts:
-      - path: "script.js"
-        issue: "visibilitychange visible branch (line 305-307) calls drawNetwork() without cancelAnimationFrame(animationFrame) guard. initCanvas (line 289-293) calls drawNetwork() without cancelAnimationFrame(animationFrame) guard."
-    missing:
-      - "Add cancelAnimationFrame(animationFrame) immediately before drawNetwork() in the visibilitychange visible branch"
-      - "Add cancelAnimationFrame(animationFrame) immediately before drawNetwork() in initCanvas"
+re_verification:
+  previous_status: gaps_found
+  previous_score: 4/5
+  gaps_closed:
+    - "Canvas particle system pauses when the tab is hidden (SC-4 partial) — CR-01 fix applied: cancelAnimationFrame guard added before drawNetwork() in both initCanvas (line 291) and visibilitychange visible branch (line 307)"
+  gaps_remaining: []
+  regressions: []
 deferred:
   - truth: "Canvas and agent-trace animation respect prefers-reduced-motion in JavaScript (CR-02, WR-05)"
     addressed_in: "Phase 5"
@@ -30,9 +27,9 @@ human_verification:
 # Phase 2: Hero Verification Report
 
 **Phase Goal:** A visitor landing on the site immediately understands who Manik works with, what he builds, and has a single clear action to take — in the first 5 seconds.
-**Verified:** 2026-05-07
-**Status:** gaps_found
-**Re-verification:** No — initial verification
+**Verified:** 2026-05-07T12:00:00Z
+**Status:** human_needed
+**Re-verification:** Yes — after CR-01 gap closure
 
 ---
 
@@ -43,12 +40,12 @@ human_verification:
 | # | Truth | Status | Evidence |
 |---|-------|--------|----------|
 | 1 | Hero headline speaks to both audiences in first-person voice; no phone/Gmail in hero | VERIFIED | `index.html:48` — `<h1>AI systems built to run your business.</h1>`. Gmail at line 341 is footer-only. No form, phone, or Gmail tag anywhere in the hero section (lines 43-102). |
-| 2 | Single "Book a discovery call" CTA + "View work" secondary link visible above fold; no form in hero | VERIFIED | `index.html:51-52` — both buttons present with correct text and href. Contact form at line 312 is in `#contact` section, not in hero. |
-| 3 | Right column shows animated agent orchestration trace — not old SME console copy | VERIFIED (with open WR-05) | `script.js:315-432` — full agent-trace block with LOOPS config (startup-pipeline + sme-automation), MutationObserver reveal-wait, sequential row activation, elapsed timer, and label fades. Old 3-row SME content (Monitoring Agent, Data Agent) confirmed absent from console-body. WR-05: startTrace() has no prefers-reduced-motion guard — deferred to Phase 5 (PERF-04). |
-| 4 | Canvas runs at ≤40 particles with O(n²) loop removed, violet color, pauses when tab hidden | PARTIAL | Particle count fixed at 35 (VERIFIED). Old conditional `width < 720 ? 42 : 82` absent. k-nearest loop replaces O(n²) (VERIFIED). Violet rgba(124,92,252) colors throughout (VERIFIED). visibilitychange cancel-on-hidden WIRED (line 304). CR-01 BUG: visibilitychange visible-branch (line 306) and initCanvas (line 291) both call drawNetwork() without prior cancelAnimationFrame — double-rAF race under early tab-switch. |
-| 5 | "Currently taking 1-2 new projects" scarcity signal visible near hero CTA | VERIFIED | `index.html:54-57` — scarcity-signal paragraph with scarcity-dot span and exact copy, positioned after .hero-actions. `styles.css:371-392` — pulse-dot keyframe, .scarcity-signal flex layout, .scarcity-dot green animation. Reduced-motion guard at `styles.css:599-601`. |
+| 2 | Single "Book a discovery call" CTA + "View work" secondary link visible above fold; no form in hero | VERIFIED | `index.html:51-52` — both buttons present with correct text and href. Contact form is in `#contact` section only, not in hero. |
+| 3 | Right column shows animated agent orchestration trace — not old SME console copy | VERIFIED | `script.js:317-432` — full agent-trace block with LOOPS config (startup-pipeline + sme-automation), MutationObserver reveal-wait, sequential row activation, elapsed timer, and label fades. Old 3-row SME content (Monitoring Agent, Data Agent) confirmed absent from console-body. WR-05 deferred to Phase 5 (PERF-04). |
+| 4 | Canvas runs at ≤40 particles with O(n²) loop removed, violet color, pauses when tab hidden | VERIFIED | Particle count fixed at 35 (`script.js:179`). Old conditional `width < 720 ? 42 : 82` absent. k-nearest loop (`script.js:232-256`) replaces O(n²). Violet `rgba(124,92,252)` throughout. `cancelAnimationFrame(animationFrame)` guard on hidden branch (`line 305`) AND on visible branch (`line 307`) AND in `initCanvas` (`line 291`). CR-01 gap closed. |
+| 5 | "Currently taking 1-2 new projects" scarcity signal visible near hero CTA | VERIFIED | `index.html:54-57` — scarcity-signal paragraph with scarcity-dot span and exact copy, positioned after .hero-actions. `styles.css:371-392` — pulse-dot keyframe, .scarcity-signal flex layout, .scarcity-dot green animation. Reduced-motion CSS guard at `styles.css:599-601`. |
 
-**Score:** 4/5 truths verified (SC-4 PARTIAL due to CR-01)
+**Score:** 5/5 truths verified
 
 ---
 
@@ -69,8 +66,8 @@ Items not yet met but explicitly addressed in later milestone phases.
 |----------|----------|--------|---------|
 | `index.html` | Rewritten hero copy block with scarcity signal and correct CTA structure | VERIFIED | h1, lede, scarcity-signal element, data-agent-trace hook, data-console-label hook, 4 flow-rows all present |
 | `styles.css` | Scarcity signal styles, flow-dot pulse keyframe, console label fade, violet console border | VERIFIED | .scarcity-signal, .scarcity-dot, @keyframes pulse-dot, @keyframes flow-dot-pulse, .console-top strong.label-fade, rgba(124,92,252,0.32) border — all present |
-| `script.js` | Rewritten canvas block with HERO-04 fixes | PARTIAL | All structural requirements met; CR-01 double-rAF race condition not fixed |
-| `script.js` | Agent-trace animation block after canvas block | VERIFIED | Full dual-loop animation block at lines 315-432 with correct LOOPS config and MutationObserver |
+| `script.js` | Rewritten canvas block with HERO-04 fixes including CR-01 guards | VERIFIED | All structural requirements met; CR-01 fixed — `cancelAnimationFrame(animationFrame)` at lines 291 and 307 |
+| `script.js` | Agent-trace animation block after canvas block | VERIFIED | Full dual-loop animation block at lines 317-432 with correct LOOPS config and MutationObserver |
 
 ---
 
@@ -79,13 +76,14 @@ Items not yet met but explicitly addressed in later milestone phases.
 | From | To | Via | Status | Details |
 |------|----|-----|--------|---------|
 | index.html .hero-copy | .scarcity-signal | element after .hero-actions | WIRED | `index.html:54` — scarcity-signal inside .hero-copy, directly after .hero-actions div |
-| styles.css .ops-console | violet accent tokens | border rgba(124,92,252,0.32) and box-shadow var(--color-accent-dim) | WIRED | `styles.css:472-474` confirmed |
-| script.js requestIdleCallback | initCanvas function | requestIdleCallback(initCanvas, {timeout:2000}) | WIRED | `script.js:295` confirmed |
-| script.js visibilitychange | cancelAnimationFrame(animationFrame) | document.hidden check | WIRED (hidden branch only) | `script.js:303-304` — cancel on hidden WIRED. Visible branch (line 306) MISSING guard — CR-01. |
-| script.js debounce wrapper | resizeCanvas | window.addEventListener("resize", debounce(resizeCanvas, 180)) | WIRED | `script.js:292` confirmed |
-| script.js consoleEl | index.html [data-agent-trace] | document.querySelector("[data-agent-trace]") | WIRED | `script.js:318`, `index.html:59` |
-| script.js consoleLabel | index.html [data-console-label] | document.querySelector("[data-console-label]") | WIRED | `script.js:319`, `index.html:64` |
-| script.js MutationObserver | revealObserver is-visible class | attributeFilter: ["class"] on consoleEl | WIRED | `script.js:424-431` confirmed |
+| styles.css .ops-console | violet accent tokens | border rgba(124,92,252,0.32) and box-shadow var(--color-accent-dim) | WIRED | Confirmed present in styles.css |
+| script.js requestIdleCallback | initCanvas function | requestIdleCallback(initCanvas, {timeout:2000}) | WIRED | `script.js:296` confirmed |
+| script.js visibilitychange | cancelAnimationFrame(animationFrame) then drawNetwork() | document.hidden check | WIRED (both branches) | `script.js:305` — cancel on hidden. `script.js:307` — cancel guard BEFORE drawNetwork() on visible. CR-01 CLOSED. |
+| script.js initCanvas | cancelAnimationFrame(animationFrame) then drawNetwork() | called by requestIdleCallback | WIRED | `script.js:291` — cancel guard BEFORE drawNetwork() in initCanvas. CR-01 CLOSED. |
+| script.js debounce wrapper | resizeCanvas | window.addEventListener("resize", debounce(resizeCanvas, 180)) | WIRED | `script.js:293` confirmed |
+| script.js consoleEl | index.html [data-agent-trace] | document.querySelector("[data-agent-trace]") | WIRED | `script.js:320`, `index.html:59` |
+| script.js consoleLabel | index.html [data-console-label] | document.querySelector("[data-console-label]") | WIRED | `script.js:321`, `index.html:64` |
+| script.js MutationObserver | revealObserver is-visible class | attributeFilter: ["class"] on consoleEl | WIRED | MutationObserver block in agent-trace section confirmed |
 
 ---
 
@@ -110,8 +108,8 @@ Step 7b: SKIPPED (vanilla HTML/CSS/JS with no build step or runnable CLI entry p
 |-------------|------------|-------------|--------|----------|
 | HERO-01 | 02-01-PLAN.md | Hero headline serves both audiences in first-person voice | SATISFIED | h1 "AI systems built to run your business." at index.html:48; lede at line 49 — dual-audience, first-person |
 | HERO-02 | 02-01-PLAN.md | Single primary CTA + secondary link; no form/phone/Gmail in hero | SATISFIED | Buttons at index.html:51-52; form is in #contact section only |
-| HERO-03 | 02-03-PLAN.md | Animated agent orchestration trace in right column | SATISFIED | Full dual-loop animation block in script.js:315-432; old SME content absent |
-| HERO-04 | 02-02-PLAN.md | Canvas: ≤40 particles, no O(n²), requestIdleCallback, visibilitychange pause, debounced resize, violet | PARTIALLY BLOCKED | All sub-requirements structurally present; CR-01 double-rAF race means pause guarantee is unreliable under early tab-switch sequence |
+| HERO-03 | 02-03-PLAN.md | Animated agent orchestration trace in right column | SATISFIED | Full dual-loop animation block in script.js:317-432; old SME content absent |
+| HERO-04 | 02-02-PLAN.md | Canvas: ≤40 particles, no O(n²), requestIdleCallback, visibilitychange pause, debounced resize, violet | SATISFIED | All sub-requirements met. CR-01 closed: cancelAnimationFrame guards at script.js:291 and 307 prevent double-rAF race. |
 | HERO-05 | 02-01-PLAN.md | Scarcity signal visible in hero CTA area | SATISFIED | scarcity-signal element at index.html:54-57 |
 
 ---
@@ -120,11 +118,11 @@ Step 7b: SKIPPED (vanilla HTML/CSS/JS with no build step or runnable CLI entry p
 
 | File | Line | Pattern | Severity | Impact |
 |------|------|---------|----------|--------|
-| script.js | 306 | drawNetwork() called without cancelAnimationFrame(animationFrame) guard in visibilitychange visible branch | BLOCKER | Double-rAF race: early tab-switch creates orphaned animation loop; contradicts SC-4 "pauses when tab is hidden" guarantee |
-| script.js | 291 | drawNetwork() called without cancelAnimationFrame(animationFrame) guard inside initCanvas | BLOCKER | Same root cause as above — part of the CR-01 double-rAF sequence |
-| styles.css | 401 | `rgba(4, 217, 217, 0.45)` — old cyan color on .hero-contact-links border-bottom | WARNING | Residual cyan value from pre-Phase-2 CSS not in the hero section but in the same stylesheet; does not affect hero section visually; .hero-contact-links is not rendered in current hero markup |
+| styles.css | 401 | `rgba(4, 217, 217, 0.45)` — old cyan color on .hero-contact-links border-bottom | WARNING | Residual cyan value from pre-Phase-2 CSS not in the hero section. `.hero-contact-links` is not present in current hero markup and has no visible effect on the hero. Not a blocker. |
 | script.js | — | No prefers-reduced-motion guard in canvas initCanvas block (CR-02) | INFO/DEFERRED | Deferred to Phase 5 (PERF-04) |
-| script.js | 415-418 | startTrace() has no prefers-reduced-motion guard (WR-05) | INFO/DEFERRED | Deferred to Phase 5 (PERF-04) |
+| script.js | — | startTrace() has no prefers-reduced-motion guard (WR-05) | INFO/DEFERRED | Deferred to Phase 5 (PERF-04) |
+
+No blockers remain. CR-01 is resolved.
 
 ---
 
@@ -146,34 +144,14 @@ Step 7b: SKIPPED (vanilla HTML/CSS/JS with no build step or runnable CLI entry p
 
 ### Gaps Summary
 
-**1 gap blocking full SC-4 confidence:**
+No code gaps remain. All 5 must-have truths are VERIFIED.
 
-**CR-01 — Double rAF race on early tab-switch (script.js lines 291, 306)**
+**CR-01 resolved:** `cancelAnimationFrame(animationFrame)` is now present at `script.js:291` (inside `initCanvas` before `drawNetwork()`) and at `script.js:307` (inside the visibilitychange visible branch before `drawNetwork()`). The double-rAF race condition that could produce an orphaned animation loop under early tab-switch is closed.
 
-The canvas visibilitychange handler and initCanvas function both call `drawNetwork()` without first cancelling any existing rAF handle. Under the specific sequence — tab hidden before requestIdleCallback fires (within the first 2 seconds of page load) — two independent rAF loops start. The `animationFrame` variable only tracks the most recent loop. Any call to `cancelAnimationFrame(animationFrame)` orphans the first loop, which runs indefinitely at 60fps with no way to cancel it.
-
-Root cause: two lines need a single-line fix each.
-
-**Fix (both lines):**
-```js
-// visibilitychange visible branch (line 305-307):
-} else if (canvas && context) {
-  cancelAnimationFrame(animationFrame);  // ADD THIS
-  drawNetwork();
-}
-
-// initCanvas (line 289-293):
-const initCanvas = () => {
-  resizeCanvas();
-  cancelAnimationFrame(animationFrame);  // ADD THIS
-  drawNetwork();
-  window.addEventListener("resize", debounce(resizeCanvas, 180));
-};
-```
-
-This is a 2-line fix. It is the only change needed to close the gap. All other SC-4 sub-requirements (particle count, algorithm, colors, deferred init, debounced resize) are fully satisfied.
+The two items pending human verification (above-fold render, agent-trace animation timing) are visual/behavioral checks that require a browser and are not resolvable through code inspection alone.
 
 ---
 
-_Verified: 2026-05-07_
+_Verified: 2026-05-07T12:00:00Z_
 _Verifier: Claude (gsd-verifier)_
+_Re-verification: gap closure after CR-01 fix_
