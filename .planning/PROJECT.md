@@ -20,7 +20,7 @@ An SME owner or startup founder lands on the site and immediately feels they've 
 
 ### Active
 
-- [ ] Hero section that positions AgentOps Studio as a premium AI engineering partner for startups
+- [x] Hero section that positions AgentOps Studio as a premium AI engineering partner for startups — Validated in Phase 2
 - [ ] Services section communicating full-stack AI build capability (AI agents, features, infra, DevOps)
 - [ ] Portfolio section with placeholder project cards (structure ready for real case studies)
 - [ ] Process section showing how Manik works with clients
