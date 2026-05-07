@@ -62,7 +62,6 @@ All values are from the established Phase 1 token system. No new type styles are
 |------|------|--------|-------------|----------------|--------------|
 | Body / paragraph | 1rem (16px) | 400 | 1.5 | 0 | body rule |
 | Secondary body | 1.12rem (~18px) | 400 | 1.5 | 0 | `.section-heading p`, `.contact-copy p` |
-| Label / eyebrow | 0.82rem (~13px) | 800 | 1 | `var(--tracking-label)` = 0.08em | `.eyebrow` |
 | Heading h3 | `clamp(1.25rem, 1.5vw + 0.5rem, 1.75rem)` | 600 | 1.3 | `var(--tracking-heading)` = -0.03em | `h3` |
 | Heading h2 | `clamp(1.75rem, 3vw + 0.75rem, 3rem)` | 700 | 1.06 | `var(--tracking-heading)` = -0.03em | `h2` |
 
@@ -422,7 +421,7 @@ CSS: `.footer-meta` mirrors the existing `.site-footer span:last-child` flex pat
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-3);
 }
 
 .footer-copyright {
@@ -516,11 +515,11 @@ This is a vanilla HTML/CSS/JS project. No package registry, no component registr
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS (FLAG — 3 weights pre-existing Phase 1 values, non-blocking)
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-05-07
