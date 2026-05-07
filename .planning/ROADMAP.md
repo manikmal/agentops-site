@@ -72,6 +72,8 @@ Plans:
 
 **Wave 3** *(depends on 03-01 and 03-02)*
 - [ ] 03-03-PLAN.md — HTML content: 10-pill tech strip, dual-cluster services section, 4 NDA portfolio cards
+
+Cross-cutting constraints: `.timeline-step` preserved in all compound-selector edits (Phase 4 dependency); CSS token variables only (`var(--color-accent)` etc.) — no inline hex; `reveal` class on all new cards/headings
 **UI hint**: yes
 
 ### Phase 4: Trust & Conversion
