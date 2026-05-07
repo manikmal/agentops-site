@@ -311,3 +311,122 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("pagehide", () => {
   cancelAnimationFrame(animationFrame);
 });
+
+// ============================================================
+// AGENT TRACE — dual-loop console animation
+// ============================================================
+const consoleEl = document.querySelector("[data-agent-trace]");
+const consoleLabel = document.querySelector("[data-console-label]");
+
+if (consoleEl) {
+  const LOOPS = [
+    {
+      label: "startup-pipeline",
+      steps: [
+        { agent: "Orchestrator",  task: "Merge detected on main" },
+        { agent: "Build Agent",   task: "Compiling and bundling" },
+        { agent: "Test Agent",    task: "Running integration suite" },
+        { agent: "Deploy Agent",  task: "Pushing to production" }
+      ]
+    },
+    {
+      label: "sme-automation",
+      steps: [
+        { agent: "Orchestrator",  task: "Weekly report triggered" },
+        { agent: "Data Agent",    task: "Pulling campaign metrics" },
+        { agent: "Content Agent", task: "Generating summary copy" },
+        { agent: "Publish Agent", task: "Sending to Notion + Slack" }
+      ]
+    }
+  ];
+
+  const rows = Array.from(consoleEl.querySelectorAll(".flow-row"));
+
+  let traceTimeout = null;
+  let currentLoop = 0;
+  let currentStep = 0;
+  let stepStart = null;
+  let elapsedInterval = null;
+
+  function activateRow(stepIndex) {
+    rows.forEach((row, i) => {
+      row.classList.toggle("active", i === stepIndex);
+    });
+    const em = rows[stepIndex] && rows[stepIndex].querySelector("em");
+    if (em) {
+      em.textContent = "0s";
+      stepStart = Date.now();
+      clearInterval(elapsedInterval);
+      elapsedInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - stepStart) / 1000);
+        em.textContent = elapsed + "s";
+      }, 1000);
+    }
+  }
+
+  function resetRows() {
+    clearInterval(elapsedInterval);
+    rows.forEach((row) => {
+      row.classList.remove("active");
+      const em = row.querySelector("em");
+      if (em) em.textContent = "•";
+    });
+  }
+
+  function populateRows(loop) {
+    loop.steps.forEach((step, i) => {
+      if (!rows[i]) return;
+      const strong = rows[i].querySelector("strong");
+      const p = rows[i].querySelector("p");
+      if (strong) strong.textContent = step.agent;
+      if (p) p.textContent = step.task;
+    });
+  }
+
+  function swapLabel(newLabel) {
+    if (!consoleLabel) return;
+    consoleLabel.classList.add("label-fade");
+    setTimeout(() => {
+      consoleLabel.textContent = newLabel;
+      consoleLabel.classList.remove("label-fade");
+    }, 250);
+  }
+
+  function runStep() {
+    activateRow(currentStep);
+    traceTimeout = setTimeout(() => {
+      currentStep += 1;
+      if (currentStep < LOOPS[currentLoop].steps.length) {
+        runStep();
+      } else {
+        clearInterval(elapsedInterval);
+        traceTimeout = setTimeout(() => {
+          resetRows();
+          currentLoop = (currentLoop + 1) % LOOPS.length;
+          currentStep = 0;
+          populateRows(LOOPS[currentLoop]);
+          swapLabel(LOOPS[currentLoop].label);
+          traceTimeout = setTimeout(runStep, 400);
+        }, 1200);
+      }
+    }, 2800);
+  }
+
+  function startTrace() {
+    populateRows(LOOPS[0]);
+    swapLabel(LOOPS[0].label);
+    traceTimeout = setTimeout(runStep, 600);
+  }
+
+  if (consoleEl.classList.contains("is-visible")) {
+    startTrace();
+  } else {
+    const mo = new MutationObserver(() => {
+      if (consoleEl.classList.contains("is-visible")) {
+        mo.disconnect();
+        startTrace();
+      }
+    });
+    mo.observe(consoleEl, { attributeFilter: ["class"] });
+  }
+}
