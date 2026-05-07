@@ -62,7 +62,16 @@ Cross-cutting constraints: `data-*` attribute hooks for all JS elements; CSS tok
   3. All service and portfolio cards respond to cursor movement with a violet spotlight glow (`rgba(124, 92, 252, 0.12)`)
   4. The portfolio section shows 3–4 fully-styled NDA placeholder cards with real-seeming problem statements and outcomes — no "coming soon" text visible to visitors
   5. Portfolio card markup accepts real case study content as a drop-in replacement without layout changes
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+**Wave 1**
+- [ ] 03-01-PLAN.md — Delete old SME sections, fix nav hrefs (#agents→#services), update spotlight JS selector
+
+**Wave 2** *(depends on 03-01)*
+- [ ] 03-02-PLAN.md — CSS cleanup: remove stale classes, add services CSS block, update marquee speed, extend logo-strip span for SVG
+
+**Wave 3** *(depends on 03-01 and 03-02)*
+- [ ] 03-03-PLAN.md — HTML content: 10-pill tech strip, dual-cluster services section, 4 NDA portfolio cards
 **UI hint**: yes
 
 ### Phase 4: Trust & Conversion
@@ -96,6 +105,6 @@ Cross-cutting constraints: `data-*` attribute hooks for all JS elements; CSS tok
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
 | 2. Hero | 0/3 | Not started | - |
-| 3. Core Sections | 0/TBD | Not started | - |
+| 3. Core Sections | 0/3 | Not started | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
 | 5. Polish | 0/TBD | Not started | - |
