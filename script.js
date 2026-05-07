@@ -148,6 +148,18 @@ document.querySelectorAll(".agent-card, .portfolio-card, .package-card, .devops-
   });
 });
 
+// ============================================================
+// CANVAS — particle network
+// ============================================================
+
+function debounce(fn, ms) {
+  let id;
+  return (...args) => {
+    clearTimeout(id);
+    id = setTimeout(() => fn(...args), ms);
+  };
+}
+
 const canvas = document.querySelector("[data-agent-canvas]");
 const context = canvas ? canvas.getContext("2d") : null;
 let particles = [];
@@ -164,7 +176,7 @@ function resizeCanvas() {
 }
 
 function createParticles(width, height) {
-  const count = width < 720 ? 42 : 82;
+  const count = 35;   // fixed ≤40 cap per D-13; no mobile branch
   particles = Array.from({ length: count }, () => {
     const vx = (Math.random() - 0.5) * 0.42;
     const vy = (Math.random() - 0.5) * 0.42;
@@ -189,6 +201,7 @@ function drawNetwork() {
   context.fillStyle = "rgba(8, 10, 10, 0.5)";
   context.fillRect(0, 0, width, height);
 
+  // Update particle positions and apply mouse repel + spring-back
   for (const particle of particles) {
     particle.x += particle.vx;
     particle.y += particle.vy;
@@ -216,28 +229,36 @@ function drawNetwork() {
     particle.vy += (particle.baseVy - particle.vy) * 0.02;
   }
 
-  for (let i = 0; i < particles.length; i += 1) {
-    for (let j = i + 1; j < particles.length; j += 1) {
-      const a = particles[i];
+  // k-nearest neighbor line drawing — O(n×k), not O(n²)
+  // k=6 per D-14 (range 5–8); squared distance avoids sqrt in inner loop
+  for (let i = 0; i < particles.length; i++) {
+    const a = particles[i];
+    const neighbors = [];
+    for (let j = 0; j < particles.length; j++) {
+      if (i === j) continue;
       const b = particles[j];
       const dx = a.x - b.x;
       const dy = a.y - b.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < 150) {
-        const opacity = 1 - distance / 150;
-        context.strokeStyle = `rgba(4, 217, 217, ${opacity * 0.24})`;
-        context.lineWidth = 1;
-        context.beginPath();
-        context.moveTo(a.x, a.y);
-        context.lineTo(b.x, b.y);
-        context.stroke();
-      }
+      const dist = dx * dx + dy * dy;
+      if (dist < 150 * 150) neighbors.push({ b, dist });
+    }
+    neighbors.sort((x, y) => x.dist - y.dist);
+    const k = Math.min(6, neighbors.length);
+    for (let n = 0; n < k; n++) {
+      const d = Math.sqrt(neighbors[n].dist);
+      const opacity = 1 - d / 150;
+      context.strokeStyle = `rgba(124, 92, 252, ${opacity * 0.15})`;
+      context.lineWidth = 1;
+      context.beginPath();
+      context.moveTo(a.x, a.y);
+      context.lineTo(neighbors[n].b.x, neighbors[n].b.y);
+      context.stroke();
     }
   }
 
+  // Draw particles — violet per D-15
   for (const particle of particles) {
-    context.fillStyle = "rgba(164, 246, 63, 0.8)";
+    context.fillStyle = "rgba(124, 92, 252, 0.8)";
     context.beginPath();
     context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
     context.fill();
@@ -248,24 +269,45 @@ function drawNetwork() {
 
 const mouse = { x: -999, y: -999 };
 
-window.addEventListener("mousemove", (event) => {
-  if (!canvas) return;
-  const rect = canvas.getBoundingClientRect();
-  mouse.x = event.clientX - rect.left;
-  mouse.y = event.clientY - rect.top;
-});
+// Desktop-only mouse interaction per D-16: (pointer: fine) is true for mouse/trackpad, false for touch-only
+if (window.matchMedia("(pointer: fine)").matches) {
+  window.addEventListener("mousemove", (event) => {
+    if (!canvas) return;
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = event.clientX - rect.left;
+    mouse.y = event.clientY - rect.top;
+  });
 
-window.addEventListener("mouseleave", () => {
-  mouse.x = -999;
-  mouse.y = -999;
-});
-
-if (canvas && context) {
-  resizeCanvas();
-  drawNetwork();
-  window.addEventListener("resize", resizeCanvas);
+  window.addEventListener("mouseleave", () => {
+    mouse.x = -999;
+    mouse.y = -999;
+  });
 }
 
+// Deferred init via requestIdleCallback per D-17; setTimeout fallback for Safari
+if (canvas && context) {
+  const initCanvas = () => {
+    resizeCanvas();
+    drawNetwork();
+    window.addEventListener("resize", debounce(resizeCanvas, 180));
+  };
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(initCanvas, { timeout: 2000 });
+  } else {
+    setTimeout(initCanvas, 200);
+  }
+}
+
+// Tab visibility pause per D-17
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    cancelAnimationFrame(animationFrame);
+  } else if (canvas && context) {
+    drawNetwork();
+  }
+});
+
+// Existing pagehide cancel — keep unchanged
 window.addEventListener("pagehide", () => {
   cancelAnimationFrame(animationFrame);
 });
