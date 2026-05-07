@@ -135,7 +135,7 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
-document.querySelectorAll(".agent-card, .portfolio-card, .package-card, .devops-card").forEach((card) => {
+document.querySelectorAll(".service-card, .portfolio-card").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
