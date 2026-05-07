@@ -32,6 +32,26 @@ window.addEventListener("scroll", () => {
   header.classList.toggle("scrolled", window.scrollY > 30);
 }, { passive: true });
 
+const navLinks = document.querySelectorAll(".nav-link");
+
+const sectionObserver = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+        });
+      }
+    }
+  },
+  { rootMargin: "-40% 0px -55% 0px" }
+);
+
+document.querySelectorAll("section[id]").forEach((section) => {
+  sectionObserver.observe(section);
+});
+
 if (leadForm) {
   leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
