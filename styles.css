@@ -734,6 +734,15 @@ h3 {
     var(--shadow-card);
 }
 
+.service-card svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: var(--space-4);
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
 .service-card h3 {
   margin-bottom: var(--space-3);
 }
