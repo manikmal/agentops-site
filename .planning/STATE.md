@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-05-06)
 
 **Core value:** A startup founder lands on the site and immediately feels they've found a serious technical partner who builds AI products end-to-end — not a freelancer running automations for small businesses.
-**Current focus:** Phase 2 — Hero (executing)
+**Current focus:** Phase 3 — Core Sections
 
 ## Current Position
 
-Phase: 2 of 5 (Hero)
-Plan: 0 of 3 in current phase
-Status: Executing
-Last activity: 2026-05-07 — Phase 2 execution started (Wave 1: 02-01, 02-02 in parallel)
+Phase: 3 of 5 (Core Sections)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-05-07 — Phase 2 complete (3/3 plans, human UAT pending)
 
-Progress: [██░░░░░░░░] 20%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
-- Average duration: —
-- Total execution time: —
+- Total plans completed: 3
+- Average duration: ~5 min/plan
+- Total execution time: ~15 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| - | - | - | - |
+| 02-hero | 3 | ~15 min | ~5 min |
 
 **Recent Trend:**
-- Last 5 plans: —
-- Trend: —
+- Last 5 plans: 02-01, 02-02, 02-03
+- Trend: on track
 
 *Updated after each plan completion*
 
@@ -70,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 2 planned — 3 PLAN.md files created, ready for /gsd-execute-phase 2
-Resume file: .planning/phases/02-hero/02-01-PLAN.md
+Stopped at: Phase 2 complete — human UAT pending (02-HUMAN-UAT.md); ready for Phase 3 planning
+Resume file: .planning/phases/02-hero/02-HUMAN-UAT.md (pending browser tests)
