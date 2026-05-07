@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 ## Current Position
 
 Phase: 3 of 5 (Core Sections)
-Plan: 0 of 3 in current phase
-Status: Ready to execute
-Last activity: 2026-05-07 — Phase 3 planned (3 plans, 3 waves)
+Plan: 1 of 3 in current phase
+Status: Executing
+Last activity: 2026-05-07 — Phase 3 Plan 1 complete (03-01)
 
-Progress: [████░░░░░░] 40%
+Progress: [████░░░░░░] 43%
 
 ## Performance Metrics
 
@@ -46,6 +46,7 @@ Recent decisions affecting current work:
 - Pre-launch: Linear.app dark aesthetic — deep blacks, violet accent, negative letter-spacing
 - Pre-launch: Portfolio as styled NDA placeholder cards in v1
 - Pre-launch: Primary CTA = "Book a discovery call" — calendar link required before launch
+- 03-01: Nav Work→#portfolio, Process→#contact, About→#contact per plan spec; hero "View work" button (#portfolio) left untouched
 
 ### Pending Todos
 
@@ -70,5 +71,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 3 context gathered — ready for Phase 3 planning
-Resume file: .planning/phases/03-core-sections/03-CONTEXT.md
+Stopped at: Phase 3 Plan 01 complete — ready for 03-02 (CSS cleanup)
+Resume file: .planning/phases/03-core-sections/03-01-SUMMARY.md

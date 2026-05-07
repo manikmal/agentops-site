@@ -65,7 +65,7 @@ Cross-cutting constraints: `data-*` attribute hooks for all JS elements; CSS tok
 **Plans**: 3 plans
 Plans:
 **Wave 1**
-- [ ] 03-01-PLAN.md — Delete old SME sections, fix nav hrefs (#agents→#services), update spotlight JS selector
+- [x] 03-01-PLAN.md — Delete old SME sections, fix nav hrefs (#agents→#services), update spotlight JS selector
 
 **Wave 2** *(depends on 03-01)*
 - [ ] 03-02-PLAN.md — CSS cleanup: remove stale classes, add services CSS block, update marquee speed, extend logo-strip span for SVG
@@ -106,7 +106,7 @@ Cross-cutting constraints: `.timeline-step` preserved in all compound-selector e
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
-| 2. Hero | 0/3 | Not started | - |
-| 3. Core Sections | 0/3 | Not started | - |
+| 2. Hero | 3/3 | Complete | 2026-05-07 |
+| 3. Core Sections | 1/3 | In Progress | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
 | 5. Polish | 0/TBD | Not started | - |
