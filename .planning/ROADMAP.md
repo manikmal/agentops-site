@@ -40,7 +40,11 @@ Plans:
   3. The right column displays a styled, animated agent orchestration trace visual — not the old SME console copy
   4. The canvas particle system runs at ≤40 particles with the O(n²) line-drawing loop removed, violet accent color, and pauses when the tab is hidden
   5. A "Currently taking 1–2 new projects" scarcity signal is visible in or near the hero CTA area
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 02-01-PLAN.md — Hero copy + styles: h1/lede rewrite, scarcity signal HTML+CSS, violet console border, flow-dot pulse
+- [ ] 02-02-PLAN.md — Canvas rewrite: 35 particles, violet colors, k-nearest lines, requestIdleCallback, visibilitychange pause, debounced resize
+- [ ] 02-03-PLAN.md — Agent-trace animation: dual-loop startup/SME console animation with MutationObserver reveal-wait
 **UI hint**: yes
 
 ### Phase 3: Core Sections
@@ -86,7 +90,7 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
-| 2. Hero | 0/TBD | Not started | - |
+| 2. Hero | 0/3 | Not started | - |
 | 3. Core Sections | 0/TBD | Not started | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
 | 5. Polish | 0/TBD | Not started | - |
