@@ -42,9 +42,14 @@ Plans:
   5. A "Currently taking 1–2 new projects" scarcity signal is visible in or near the hero CTA area
 **Plans**: 3 plans
 Plans:
+**Wave 1** *(parallel)*
 - [ ] 02-01-PLAN.md — Hero copy + styles: h1/lede rewrite, scarcity signal HTML+CSS, violet console border, flow-dot pulse
 - [ ] 02-02-PLAN.md — Canvas rewrite: 35 particles, violet colors, k-nearest lines, requestIdleCallback, visibilitychange pause, debounced resize
+
+**Wave 2** *(blocked on Wave 1 — 02-03 requires console HTML from 02-01)*
 - [ ] 02-03-PLAN.md — Agent-trace animation: dual-loop startup/SME console animation with MutationObserver reveal-wait
+
+Cross-cutting constraints: `data-*` attribute hooks for all JS elements; CSS token values only (`--color-accent`, `--color-success`); iOS Safari `backdrop-filter` never on same element as `transform`
 **UI hint**: yes
 
 ### Phase 3: Core Sections
