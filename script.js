@@ -288,6 +288,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
 if (canvas && context) {
   const initCanvas = () => {
     resizeCanvas();
+    cancelAnimationFrame(animationFrame);
     drawNetwork();
     window.addEventListener("resize", debounce(resizeCanvas, 180));
   };
@@ -303,6 +304,7 @@ document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     cancelAnimationFrame(animationFrame);
   } else if (canvas && context) {
+    cancelAnimationFrame(animationFrame);
     drawNetwork();
   }
 });
