@@ -70,5 +70,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 2 complete — human UAT pending (02-HUMAN-UAT.md); ready for Phase 3 planning
-Resume file: .planning/phases/02-hero/02-HUMAN-UAT.md (pending browser tests)
+Stopped at: Phase 3 context gathered — ready for Phase 3 planning
+Resume file: .planning/phases/03-core-sections/03-CONTEXT.md
