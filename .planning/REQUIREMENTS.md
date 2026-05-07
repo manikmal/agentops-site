@@ -9,17 +9,17 @@
 
 ### Foundation & Design System
 
-- [ ] **FOUN-01**: Design system is established with violet `#7c5cfc` as the sole primary accent, `#0a0a0b` as the base background, and a 4-step dark surface hierarchy (`#111113` / `#18181b` / `#232326`)
-- [ ] **FOUN-02**: CSS design tokens follow primitives → semantic separation; all colors, spacing, and motion values are defined as custom properties before any section CSS is written
-- [ ] **FOUN-03**: Inter variable font loads non-blocking with `opsz,wght` axes; all headings have negative `letter-spacing` (`-0.04em` h1, `-0.03em` h2); `font-optical-sizing: auto` and `-webkit-font-smoothing: antialiased` on body
-- [ ] **FOUN-04**: Fluid type scale uses `clamp()` for all heading sizes — no breakpoint-scoped `font-size` overrides
-- [ ] **FOUN-05**: Full SME language is audited and removed — no "automation audit", no "SMEs", no "we" in copy, Gmail address moved to footer only, phone number removed entirely, service package tiers removed
+- [x] **FOUN-01**: Design system is established with violet `#7c5cfc` as the sole primary accent, `#0a0a0b` as the base background, and a 4-step dark surface hierarchy (`#111113` / `#18181b` / `#232326`) — Validated in Phase 1
+- [x] **FOUN-02**: CSS design tokens follow primitives → semantic separation; all colors, spacing, and motion values are defined as custom properties before any section CSS is written — Validated in Phase 1
+- [x] **FOUN-03**: Inter variable font loads non-blocking with `opsz,wght` axes; all headings have negative `letter-spacing` (`-0.04em` h1, `-0.03em` h2); `font-optical-sizing: auto` and `-webkit-font-smoothing: antialiased` on body — Validated in Phase 1
+- [x] **FOUN-04**: Fluid type scale uses `clamp()` for all heading sizes — no breakpoint-scoped `font-size` overrides — Validated in Phase 1
+- [x] **FOUN-05**: Full SME language is audited and removed — no "automation audit", no "SMEs", no "we" in copy, Gmail address moved to footer only, phone number removed entirely, service package tiers removed — Validated in Phase 1
 
 ### Header & Navigation
 
-- [ ] **HEAD-01**: Header is redesigned as a floating pill with `backdrop-filter` blur on scroll; `-webkit-backdrop-filter` included; `backdrop-filter` and `transform` never on the same element
-- [ ] **HEAD-02**: Nav links are relabeled to match startup-native positioning: Services / Work / Process / About / Contact
-- [ ] **HEAD-03**: A "Book a call" CTA button is visible in the header nav at all viewport sizes
+- [x] **HEAD-01**: Header is redesigned as a floating pill with `backdrop-filter` blur on scroll; `-webkit-backdrop-filter` included; `backdrop-filter` and `transform` never on the same element — Validated in Phase 1
+- [x] **HEAD-02**: Nav links are relabeled to match startup-native positioning: Services / Work / Process / About / Contact — Validated in Phase 1
+- [x] **HEAD-03**: A "Book a call" CTA button is visible in the header nav at all viewport sizes — Validated in Phase 1
 
 ### Hero
 

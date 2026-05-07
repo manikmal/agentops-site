@@ -6,7 +6,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 
 ## Phases
 
-- [ ] **Phase 1: Foundation** - Design system, typography, floating header, and full SME language audit
+- [x] **Phase 1: Foundation** - Design system, typography, floating header, and full SME language audit *(Complete — 2026-05-07)*
 - [ ] **Phase 2: Hero** - Startup-native headline, agent orchestration visual, canvas performance fix, scarcity signal
 - [ ] **Phase 3: Core Sections** - Even-split tech strip, dual-audience services, NDA portfolio cards
 - [ ] **Phase 4: Trust & Conversion** - Process timeline, about section (new), CTA, footer
@@ -85,7 +85,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 2/3 | In progress | - |
+| 1. Foundation | 3/3 | Complete | 2026-05-07 |
 | 2. Hero | 0/TBD | Not started | - |
 | 3. Core Sections | 0/TBD | Not started | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
