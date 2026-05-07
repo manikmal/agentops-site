@@ -11,8 +11,8 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 
 Phase: 2 of 5 (Hero)
 Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-05-07 — Phase 1 complete: 3/3 plans, verification passed (11/11)
+Status: Context gathered — ready to plan
+Last activity: 2026-05-07 — Phase 2 context gathered (4 gray areas discussed)
 
 Progress: [██░░░░░░░░] 20%
 
@@ -55,7 +55,7 @@ None yet.
 
 - Calendar booking link (Calendly or Cal.com) is a HARD BLOCKER for launch — CTA-01 requires a live URL; placeholder `#contact` used until resolved
 - Branded email address (`manik@agentopsstudio.com`) needed — Gmail in footer undermines premium positioning
-- Hero visual content decision required before Phase 2: agent orchestration trace vs. streaming LLM trace vs. refined particle network
+- Hero visual content decision resolved in context session (2026-05-07): styled console terminal with dual-loop animation
 - Portfolio format confirmed (styled NDA cards) — required before Phase 3 implementation begins
 
 ## Deferred Items
@@ -69,6 +69,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-05-06
-Stopped at: Roadmap created — 5 phases, 39 requirements mapped, STATE.md initialized
-Resume file: None
+Last session: 2026-05-07
+Stopped at: Phase 2 context gathered — 4 gray areas discussed, CONTEXT.md written
+Resume file: .planning/phases/02-hero/02-CONTEXT.md
