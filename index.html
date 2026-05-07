@@ -300,31 +300,47 @@
       </section>
 
       <section class="contact-section section-dark" id="contact">
+        <!-- Left: calendar CTA (dominant) -->
         <div class="contact-copy reveal">
-          <p class="eyebrow">Start with one conversation</p>
-          <h2>Tell me what you're building.</h2>
-          <p>I will turn the highest-friction workflow into a clear automation, AI assistant, or deployment plan.</p>
+          <p class="eyebrow">Work together</p>
+          <h2>Ready to build something?</h2>
+          <p>I work with a small number of clients at a time so every engagement gets my full attention. If the timing is right, let's talk.</p>
+          <div class="scarcity-signal">
+            <span class="scarcity-dot" aria-hidden="true"></span>
+            Currently taking 1–2 new projects
+          </div>
+          <a
+            href="https://calendly.com/manikmalhotra6/30min"
+            target="_blank"
+            rel="noreferrer"
+            class="btn btn-primary cta-book-btn"
+          >Book a discovery call</a>
         </div>
-        <form class="contact-form reveal" data-lead-form>
-          <label>
-            Name
-            <input name="name" type="text" placeholder="Your name" required>
-          </label>
-          <label>
-            Email
-            <input name="email" type="email" placeholder="you@company.com" required>
-          </label>
-          <label>
-            Company
-            <input name="company" type="text" placeholder="Company name">
-          </label>
-          <label>
-            Workflow
-            <textarea name="workflow" rows="4" placeholder="Example: We need an AI agent to handle onboarding flows for new signups." required></textarea>
-          </label>
-          <button class="btn btn-primary" type="submit">Send message</button>
-          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-        </form>
+
+        <!-- Right: qualifying form (secondary path) -->
+        <div class="contact-form-wrapper reveal">
+          <p class="contact-form-bridge">Prefer to reach out first?</p>
+          <form class="contact-form" data-lead-form>
+            <label>
+              Your name
+              <input name="name" type="text" placeholder="Your name" required>
+            </label>
+            <label>
+              Company
+              <input name="company" type="text" placeholder="Company name">
+            </label>
+            <label>
+              What are you building?
+              <textarea name="project" rows="4" placeholder="Describe what you're working on — even rough ideas are fine." required></textarea>
+            </label>
+            <label>
+              Your timeline
+              <input name="timeline" type="text" placeholder="e.g. Looking to start in 4–6 weeks">
+            </label>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </section>
     </main>
 
@@ -333,7 +349,8 @@
         <img src="favicon.svg" alt="" aria-hidden="true" class="footer-icon" width="22" height="22">
         AgentOps Studio by Manik Malhotra
       </span>
-      <span>
+      <span class="footer-meta">
+        <span class="footer-copyright">© <span id="copyright-year"></span> AgentOps Studio</span>
         <a href="mailto:manikmalhotra6@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/manik-malhotra-9478617b/" target="_blank" rel="noreferrer">LinkedIn</a>
       </span>
