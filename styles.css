@@ -368,6 +368,29 @@ h3 {
   margin-top: 30px;
 }
 
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+.scarcity-signal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+.scarcity-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-success);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
 .hero-contact-links {
   margin-top: 16px;
 }
@@ -446,9 +469,9 @@ h3 {
 .ops-console {
   overflow: hidden;
   background: rgba(12, 18, 18, 0.86);
-  border: 1px solid rgba(4, 217, 217, 0.32);
+  border: 1px solid rgba(124, 92, 252, 0.32);
   border-radius: var(--radius-md);
-  box-shadow: 0 30px 100px rgba(4, 217, 217, 0.1);
+  box-shadow: 0 30px 100px var(--color-accent-dim);
 }
 
 .console-top {
@@ -479,6 +502,12 @@ h3 {
   margin-left: auto;
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.82rem;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+
+/* JS adds/removes .label-fade to cycle opacity during label swap */
+.console-top strong.label-fade {
+  opacity: 0;
 }
 
 .console-body {
@@ -509,6 +538,15 @@ h3 {
   background: var(--color-accent);
   border-radius: 999px;
   box-shadow: 0 0 0 8px var(--color-accent-dim);
+}
+
+@keyframes flow-dot-pulse {
+  0%, 100% { box-shadow: 0 0 0 8px var(--color-accent-dim); }
+  50%       { box-shadow: 0 0 0 12px var(--color-accent-dim); }
+}
+
+.flow-row.active .flow-dot {
+  animation: flow-dot-pulse 1.4s ease-in-out infinite;
 }
 
 .flow-row p,
@@ -557,6 +595,10 @@ h3 {
   .marquee-track {
     animation: none;
     display: contents;
+  }
+  .scarcity-dot,
+  .flow-row.active .flow-dot {
+    animation: none;
   }
 }
 

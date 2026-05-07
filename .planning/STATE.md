@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-05-06)
 
 **Core value:** A startup founder lands on the site and immediately feels they've found a serious technical partner who builds AI products end-to-end — not a freelancer running automations for small businesses.
-**Current focus:** Phase 2 — Hero
+**Current focus:** Phase 2 — Hero (executing)
 
 ## Current Position
 
 Phase: 2 of 5 (Hero)
 Plan: 0 of 3 in current phase
-Status: Ready to execute
-Last activity: 2026-05-07 — Phase 2 planned (3 plans, 2 waves)
+Status: Executing
+Last activity: 2026-05-07 — Phase 2 execution started (Wave 1: 02-01, 02-02 in parallel)
 
 Progress: [██░░░░░░░░] 20%
 
