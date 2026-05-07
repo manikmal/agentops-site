@@ -31,18 +31,18 @@
 
 ### Tech Strip
 
-- [ ] **STRIP-01**: Logo/tool strip shows an even split between AI/infra tools and SME integration tools — e.g. OpenAI, Anthropic, LangChain, Docker, GitHub Actions on the AI side; WhatsApp, Meta, Google Sheets, Gmail, Zapier/Make on the SME side — signalling capability to both audiences
+- [x] **STRIP-01**: Logo/tool strip shows an even split between AI/infra tools and SME integration tools — e.g. OpenAI, Anthropic, LangChain, Docker, GitHub Actions on the AI side; WhatsApp, Meta, Google Sheets, Gmail, Zapier/Make on the SME side — signalling capability to both audiences — Validated in Phase 3
 
 ### Services
 
-- [ ] **SERV-01**: Services section covers both tiers — SME-focused services (social media automation, marketing workflows, AI assistants) and startup-focused services (AI agent development, AI feature integration, DevOps & delivery) — outcome-first copy throughout
-- [ ] **SERV-02**: Services layout is a narrative or capabilities format — not a 3-column grid with icons and short descriptions (the generic agency template)
-- [ ] **SERV-03**: All cards have the cursor-glow / card spotlight interaction with violet gradient (`rgba(124, 92, 252, 0.12)`)
+- [x] **SERV-01**: Services section covers both tiers — SME-focused services (social media automation, marketing workflows, AI assistants) and startup-focused services (AI agent development, AI feature integration, DevOps & delivery) — outcome-first copy throughout — Validated in Phase 3
+- [x] **SERV-02**: Services layout is a narrative or capabilities format — not a 3-column grid with icons and short descriptions (the generic agency template) — Validated in Phase 3
+- [x] **SERV-03**: All cards have the cursor-glow / card spotlight interaction with violet gradient (`rgba(124, 92, 252, 0.12)`) — Validated in Phase 3 (spotlight JS wired in 03-01)
 
 ### Portfolio
 
-- [ ] **PORT-01**: Portfolio section has 3–4 fully-styled NDA placeholder cards; each card has a real-seeming problem statement, anonymous client context, and outcome — no "coming soon" text visible to visitors
-- [ ] **PORT-02**: Portfolio cards are designed to accept real case study content as drop-in replacements with no layout changes
+- [x] **PORT-01**: Portfolio section has 3–4 fully-styled NDA placeholder cards; each card has a real-seeming problem statement, anonymous client context, and outcome — no "coming soon" text visible to visitors — Validated in Phase 3
+- [x] **PORT-02**: Portfolio cards are designed to accept real case study content as drop-in replacements with no layout changes — Validated in Phase 3
 
 ### Process
 

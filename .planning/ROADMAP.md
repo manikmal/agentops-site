@@ -8,7 +8,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 
 - [x] **Phase 1: Foundation** - Design system, typography, floating header, and full SME language audit *(Complete — 2026-05-07)*
 - [x] **Phase 2: Hero** - Startup-native headline, agent orchestration visual, canvas performance fix, scarcity signal *(Complete — 2026-05-07)*
-- [ ] **Phase 3: Core Sections** - Even-split tech strip, dual-audience services, NDA portfolio cards
+- [x] **Phase 3: Core Sections** - Even-split tech strip, dual-audience services, NDA portfolio cards *(Complete — 2026-05-07)*
 - [ ] **Phase 4: Trust & Conversion** - Process timeline, about section (new), CTA, footer
 - [ ] **Phase 5: Polish** - Responsive layout, iOS Safari gate, performance, SEO meta
 
@@ -71,7 +71,7 @@ Plans:
 - [x] 03-02-PLAN.md — CSS cleanup: remove stale classes, add services CSS block, update marquee speed, extend logo-strip span for SVG
 
 **Wave 3** *(depends on 03-01 and 03-02)*
-- [ ] 03-03-PLAN.md — HTML content: 10-pill tech strip, dual-cluster services section, 4 NDA portfolio cards
+- [x] 03-03-PLAN.md — HTML content: 10-pill tech strip, dual-cluster services section, 4 NDA portfolio cards
 
 Cross-cutting constraints: `.timeline-step` preserved in all compound-selector edits (Phase 4 dependency); CSS token variables only (`var(--color-accent)` etc.) — no inline hex; `reveal` class on all new cards/headings
 **UI hint**: yes
@@ -107,6 +107,6 @@ Cross-cutting constraints: `.timeline-step` preserved in all compound-selector e
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
-| 3. Core Sections | 2/3 | In Progress | - |
+| 3. Core Sections | 3/3 | Complete | 2026-05-07 |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
 | 5. Polish | 0/TBD | Not started | - |
