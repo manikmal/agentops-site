@@ -29,8 +29,8 @@ if (navToggle && nav) {
 
 window.addEventListener("scroll", () => {
   if (!header) return;
-  header.style.boxShadow = window.scrollY > 24 ? "0 18px 60px rgba(0, 0, 0, 0.22)" : "none";
-});
+  header.classList.toggle("scrolled", window.scrollY > 30);
+}, { passive: true });
 
 if (leadForm) {
   leadForm.addEventListener("submit", async (event) => {
@@ -120,7 +120,7 @@ document.querySelectorAll(".agent-card, .portfolio-card, .package-card, .devops-
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    card.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, rgba(4, 217, 217, 0.12), transparent 34%)`;
+    card.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, rgba(124, 92, 252, 0.12), transparent 34%)`;
   });
 
   card.addEventListener("pointerleave", () => {
