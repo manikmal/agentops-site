@@ -12,7 +12,11 @@ An SME owner or startup founder lands on the site and immediately feels they've 
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Two-layer CSS token system (PRIMITIVES + SEMANTIC) with violet `#7c5cfc` accent — Validated in Phase 1
+- [x] iOS Safari-safe floating header (`.header-positioner`/`.site-header` split) — Validated in Phase 1
+- [x] Fluid type scale with `clamp()`, negative letter-spacing, Inter variable font — Validated in Phase 1
+- [x] Full SME language audit complete (no "automation audit", no "SMEs", no phone numbers, no service tiers) — Validated in Phase 1
+- [x] Startup-native nav labels and "Book a call" CTA in header — Validated in Phase 1
 
 ### Active
 
@@ -56,10 +60,10 @@ An SME owner or startup founder lands on the site and immediately feels they've 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Keep HTML/CSS/JS over framework | Single-page marketing site with no dynamic data needs — framework adds build complexity with no benefit | — Pending |
-| Linear.app aesthetic direction | Target audience (startup founders) recognizes and respects this visual language; signals technical credibility | — Pending |
-| Portfolio as placeholder in v1 | Real case study content not ready; better to ship clean placeholder structure than delay launch | — Pending |
-| Primary CTA = book a call | Highest-value conversion for a solo practice — a call closes deals | — Pending |
+| Keep HTML/CSS/JS over framework | Single-page marketing site with no dynamic data needs — framework adds build complexity with no benefit | Confirmed — Phase 1 complete |
+| Linear.app aesthetic direction | Target audience (startup founders) recognizes and respects this visual language; signals technical credibility | Confirmed — violet #7c5cfc token system in place |
+| Portfolio as placeholder in v1 | Real case study content not ready; better to ship clean placeholder structure than delay launch | Pending |
+| Primary CTA = book a call | Highest-value conversion for a solo practice — a call closes deals | Pending — calendar URL still needed |
 
 ## Evolution
 
