@@ -11,8 +11,8 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 
 Phase: 3 of 5 (Core Sections)
 Plan: 3 of 3 in current phase
-Status: Complete
-Last activity: 2026-05-07 — Phase 3 Plan 3 complete (03-03)
+Status: Awaiting human verification
+Last activity: 2026-05-07 — Phase 3 execution complete, verification paused for human review
 
 Progress: [██████░░░░] 60%
 
@@ -73,5 +73,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 3 complete — ready for Phase 4 (Trust & Conversion)
-Resume file: .planning/phases/03-core-sections/03-03-SUMMARY.md
+Stopped at: Phase 3 execution done (3/3 plans). Verification returned human_needed — two items pending:
+  1. FIX NEEDED: portfolio image URLs are 404 (malformed Unsplash IDs in index.html lines ~203-227)
+  2. HUMAN JUDGMENT: services layout (3-col grid, no icons, outcome-first copy) — confirm it reads as narrative, not icon grid
+Resume file: .planning/phases/03-core-sections/03-VERIFICATION.md
