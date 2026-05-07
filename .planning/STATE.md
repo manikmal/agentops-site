@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-05-06)
 
 **Core value:** A startup founder lands on the site and immediately feels they've found a serious technical partner who builds AI products end-to-end — not a freelancer running automations for small businesses.
-**Current focus:** Phase 3 — Core Sections
+**Current focus:** Phase 4 — Trust & Conversion
 
 ## Current Position
 
-Phase: 3 of 5 (Core Sections)
-Plan: 3 of 3 in current phase
-Status: Awaiting human verification
-Last activity: 2026-05-07 — Phase 3 execution complete, verification paused for human review
+Phase: 4 of 5 (Trust & Conversion)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-05-07 — Phase 3 UAT complete (5/5 passed), phase verified
 
-Progress: [██████░░░░] 60%
+Progress: [████████░░] 60%
 
 ## Performance Metrics
 
@@ -73,7 +73,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 3 execution done (3/3 plans). Verification returned human_needed — two items pending:
-  1. FIX NEEDED: portfolio image URLs are 404 (malformed Unsplash IDs in index.html lines ~203-227)
-  2. HUMAN JUDGMENT: services layout (3-col grid, no icons, outcome-first copy) — confirm it reads as narrative, not icon grid
-Resume file: .planning/phases/03-core-sections/03-VERIFICATION.md
+Stopped at: Phase 3 UAT complete — all 5 tests passed. Ready for Phase 4 planning.
+Resume: /gsd-discuss-phase 4 or /gsd-plan-phase 4
