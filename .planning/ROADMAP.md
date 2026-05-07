@@ -27,7 +27,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 Plans:
 - [x] 01-01-PLAN.md — CSS design system: two-layer token block, fluid typography, iOS Safari header split, violet btn-primary
 - [x] 01-02-PLAN.md — HTML structure: Inter font loading, header wrapper split, startup nav labels + CTA button, full SME language audit
-- [ ] 01-03-PLAN.md — JS wiring: passive scroll handler, violet card spotlight, active nav IntersectionObserver
+- [x] 01-03-PLAN.md — JS wiring: passive scroll handler, violet card spotlight, active nav IntersectionObserver
 **UI hint**: yes
 
 ### Phase 2: Hero
