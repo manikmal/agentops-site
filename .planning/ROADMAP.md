@@ -25,8 +25,8 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
   4. All heading elements on the page render with negative `letter-spacing` and fluid `clamp()` sizes; Inter variable font loads non-blocking
 **Plans**: 3 plans
 Plans:
-- [ ] 01-01-PLAN.md — CSS design system: two-layer token block, fluid typography, iOS Safari header split, violet btn-primary
-- [ ] 01-02-PLAN.md — HTML structure: Inter font loading, header wrapper split, startup nav labels + CTA button, full SME language audit
+- [x] 01-01-PLAN.md — CSS design system: two-layer token block, fluid typography, iOS Safari header split, violet btn-primary
+- [x] 01-02-PLAN.md — HTML structure: Inter font loading, header wrapper split, startup nav labels + CTA button, full SME language audit
 - [ ] 01-03-PLAN.md — JS wiring: passive scroll handler, violet card spotlight, active nav IntersectionObserver
 **UI hint**: yes
 
@@ -85,7 +85,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 2/3 | In progress | - |
 | 2. Hero | 0/TBD | Not started | - |
 | 3. Core Sections | 0/TBD | Not started | - |
 | 4. Trust & Conversion | 0/TBD | Not started | - |
