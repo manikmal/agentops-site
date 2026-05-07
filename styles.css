@@ -888,6 +888,29 @@ h3 {
   font-weight: 700;
 }
 
+.cta-book-btn {
+  display: inline-flex;
+  margin-top: var(--space-6);
+  font-size: 1rem;
+  padding: var(--space-4) var(--space-8);
+  min-height: 52px;
+}
+
+.contact-form-bridge {
+  margin: 0 0 var(--space-6);
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.contact-form-wrapper {
+  /* wraps the bridge heading + form */
+}
+
+[data-form-status][data-state="success"] {
+  color: var(--color-success);
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -903,6 +926,18 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.footer-copyright {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
 }
 
 .js .reveal {
