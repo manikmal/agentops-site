@@ -56,7 +56,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Calendar booking link (Calendly or Cal.com) is a HARD BLOCKER for launch — CTA-01 requires a live URL; placeholder `#contact` used until resolved
+- ~~Calendar booking link is a HARD BLOCKER~~ — **RESOLVED** 2026-05-07: `https://calendly.com/manikmalhotra6/30min`
 - Branded email address (`manik@agentopsstudio.com`) needed — Gmail in footer undermines premium positioning
 - Hero visual content decision resolved in context session (2026-05-07): styled console terminal with dual-loop animation
 - Portfolio format confirmed (styled NDA cards) — required before Phase 3 implementation begins
@@ -73,5 +73,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-07
-Stopped at: Phase 3 UAT complete — all 5 tests passed. Ready for Phase 4 planning.
-Resume: /gsd-discuss-phase 4 or /gsd-plan-phase 4
+Stopped at: Phase 4 context gathered — all decisions locked, Calendly URL resolved. Ready for Phase 4 planning.
+Resume: /gsd-plan-phase 4
