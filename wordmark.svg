@@ -1,0 +1,8 @@
+<!-- Text uses system-ui fallback; path-convert before v2 if brand consistency requires exact Inter -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 28" role="img" aria-label="AgentOps Studio">
+  <title>AgentOps Studio</title>
+  <text x="0" y="22" font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="600" font-size="20" letter-spacing="-0.5" fill="#7c5cfc">AgentOps</text>
+  <text x="106" y="22" font-family="system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="600" font-size="20" letter-spacing="-0.5" fill="#f4f4f5">Studio</text>
+</svg>
