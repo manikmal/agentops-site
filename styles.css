@@ -945,7 +945,7 @@ h3 {
 
 .footer-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: var(--space-3);
 }
