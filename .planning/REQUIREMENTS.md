@@ -76,8 +76,8 @@
 - [ ] **PERF-03**: Canvas animation runs at ≤16ms/frame on 4x CPU throttle in Chrome DevTools
 - [ ] **PERF-04**: `prefers-reduced-motion` disables all CSS transitions and canvas animation
 - [ ] **PERF-05**: All below-fold images have `loading="lazy"` and explicit `width`/`height` attributes
-- [ ] **PERF-06**: `og:title`, `og:description`, and `og:image` meta tags are set
-- [ ] **PERF-07**: No render-blocking resources; Lighthouse LCP ≤2.5s on simulated 3G
+- [x] **PERF-06**: `og:title`, `og:description`, and `og:image` meta tags are set
+- [x] **PERF-07**: No render-blocking resources; Lighthouse LCP ≤2.5s on simulated 3G
 
 ---
 
@@ -160,8 +160,8 @@
 | PERF-03 | Phase 5 | Pending |
 | PERF-04 | Phase 5 | Pending |
 | PERF-05 | Phase 5 | Pending |
-| PERF-06 | Phase 5 | Pending |
-| PERF-07 | Phase 5 | Pending |
+| PERF-06 | Phase 5 | Complete |
+| PERF-07 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 39 total
