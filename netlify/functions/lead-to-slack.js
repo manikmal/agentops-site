@@ -31,7 +31,7 @@ exports.handler = async (event) => {
   const email = clean(body.email);
   const phone = clean(body.phone);
   const company = clean(body.company);
-  const workflow = clean(body.workflow);
+  const workflow = clean(body.workflow ?? body.project);
 
   if (!name || !email || !workflow) {
     return {
