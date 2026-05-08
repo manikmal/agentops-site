@@ -115,7 +115,7 @@ Plans:
 - [x] 05-01-PLAN.md — SVG wordmark: create wordmark.svg with path-converted text (violet AgentOps + white Studio)
 - [x] 05-02-PLAN.md — HTML head + structure: og: meta block, preload hints, wordmark.svg references, mobile CTA DOM reorder
 - [x] 05-03-PLAN.md — CSS polish: prefers-reduced-motion kill-all, mix-blend-mode removal, compact mobile CTA styles at 940px
-- [ ] 05-04-PLAN.md — JS fix + lazy images: canvas reduced-motion guard, visibilitychange guard, below-fold lazy loading
+- [x] 05-04-PLAN.md — JS fix + lazy images: canvas reduced-motion guard, visibilitychange guard, below-fold lazy loading
 
 **Wave 2** *(depends on 05-02 for og-image URL context)*
 - [ ] 05-05-PLAN.md — og-image.png: branded 1200×630 social card + iOS Safari + full phase verification checkpoint

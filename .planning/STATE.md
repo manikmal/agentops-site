@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 ## Current Position
 
 Phase: 5 of 5 (Polish)
-Plan: 4 of 5 in current phase
+Plan: 5 of 5 in current phase
 Status: In progress
-Last activity: 2026-05-08 — 05-02 complete: og: meta block, LCP preloads, wordmark.svg wired, btn-book-call DOM repositioned
+Last activity: 2026-05-08 — 05-04 complete: canvas reduced-motion guard, lazy loading audit, CLS-prevention width/height on wordmark imgs
 
-Progress: [██████████] 86%
+Progress: [██████████] 90%
 
 ## Performance Metrics
 
@@ -52,6 +52,7 @@ Recent decisions affecting current work:
 - 05-01: wordmark.svg uses system-ui fallback font stack (not path-converted), acceptable for v1; viewBox 0 0 180 28; Studio x=106
 - 05-03: mix-blend-mode: screen removed from both .brand-wordmark and .hero-wordmark (SVG transparent bg); kill-all reduced-motion at top of media block; .btn-book-call compact mobile (8px 12px / 0.8125rem / margin-left:auto) inside 940px breakpoint
 - 05-02: og:/twitter: meta block with absolute agentopsstudio.com og-image URL; wordmark.svg preload (LCP); btn-book-call moved before nav-toggle in header DOM for always-visible mobile CTA
+- 05-04: canvas init and visibilitychange resume handler gated by !matchMedia reduced-motion; width/height on wordmark img elements (180x28 SVG intrinsic); loading=lazy on footer-icon
 
 ### Pending Todos
 
@@ -76,5 +77,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-08
-Stopped at: 05-02 complete. og: meta block, LCP preloads, wordmark.svg wired in header and hero, btn-book-call repositioned.
-Resume: /gsd-execute-phase 5 (next: 05-04)
+Stopped at: 05-04 complete. Canvas reduced-motion guard, lazy loading audit, CLS-prevention width/height on wordmark imgs.
+Resume: /gsd-execute-phase 5 (next: 05-05)

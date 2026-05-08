@@ -74,8 +74,8 @@
 - [ ] **PERF-01**: Site is fully responsive at 375px, 430px, 768px, and 940px — all headings use `clamp()`, no overflow, nav collapses cleanly
 - [ ] **PERF-02**: iOS Safari tested and passing: header `backdrop-filter` compositing works, no fixed-element flicker, `position: sticky` sections behave correctly
 - [ ] **PERF-03**: Canvas animation runs at ≤16ms/frame on 4x CPU throttle in Chrome DevTools
-- [ ] **PERF-04**: `prefers-reduced-motion` disables all CSS transitions and canvas animation
-- [ ] **PERF-05**: All below-fold images have `loading="lazy"` and explicit `width`/`height` attributes
+- [x] **PERF-04**: `prefers-reduced-motion` disables all CSS transitions and canvas animation
+- [x] **PERF-05**: All below-fold images have `loading="lazy"` and explicit `width`/`height` attributes
 - [x] **PERF-06**: `og:title`, `og:description`, and `og:image` meta tags are set
 - [x] **PERF-07**: No render-blocking resources; Lighthouse LCP ≤2.5s on simulated 3G
 
@@ -158,8 +158,8 @@
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |
-| PERF-04 | Phase 5 | Pending |
-| PERF-05 | Phase 5 | Pending |
+| PERF-04 | Phase 5 | Complete |
+| PERF-05 | Phase 5 | Complete |
 | PERF-06 | Phase 5 | Complete |
 | PERF-07 | Phase 5 | Complete |
 
