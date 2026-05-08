@@ -21,13 +21,13 @@ An SME owner or startup founder lands on the site and immediately feels they've 
 ### Active
 
 - [x] Hero section that positions AgentOps Studio as a premium AI engineering partner for startups — Validated in Phase 2
-- [ ] Services section communicating full-stack AI build capability (AI agents, features, infra, DevOps)
-- [ ] Portfolio section with placeholder project cards (structure ready for real case studies)
-- [ ] Process section showing how Manik works with clients
-- [ ] About section establishing Manik's credibility as a solo AI engineer
-- [ ] Primary CTA throughout site driving to "Book a discovery call"
-- [ ] Linear.app-inspired dark/technical aesthetic (deep blacks, refined typography, subtle technical motifs)
-- [ ] Fully responsive design
+- [x] Services section communicating full-stack AI build capability (AI agents, features, infra, DevOps) — Validated in Phase 3
+- [x] Portfolio section with placeholder project cards (structure ready for real case studies) — Validated in Phase 3
+- [x] Process section showing how Manik works with clients (5 founder-POV steps, async-first) — Validated in Phase 4
+- [x] About section establishing Manik's credibility as a solo AI engineer — Validated in Phase 4
+- [x] Primary CTA driving to Calendly booking link as dominant action — Validated in Phase 4
+- [x] Linear.app-inspired dark/technical aesthetic (deep blacks, refined typography, subtle technical motifs) — Validated in Phase 1
+- [ ] Fully responsive design (Phase 5)
 - [ ] Deployed on Netlify via existing pipeline
 - [ ] Single HTML/CSS/JS file architecture (no build step, same as current)
 
@@ -83,4 +83,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-06 after initialization*
+*Last updated: 2026-05-08 — Phase 4 complete (trust & conversion)*
