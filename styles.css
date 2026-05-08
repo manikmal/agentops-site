@@ -224,8 +224,7 @@ textarea {
   content: "";
   position: absolute;
   bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 2px); /* half of width: 4px — no transform needed */
   width: 4px;
   height: 4px;
   background: var(--color-accent);
