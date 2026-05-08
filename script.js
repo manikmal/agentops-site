@@ -299,7 +299,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
 }
 
 // Deferred init via requestIdleCallback per D-17; setTimeout fallback for Safari
-if (canvas && context) {
+if (canvas && context && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const initCanvas = () => {
     resizeCanvas();
     cancelAnimationFrame(animationFrame);
@@ -323,7 +323,7 @@ document.addEventListener("visibilitychange", () => {
     cancelAnimationFrame(animationFrame);
     clearTimeout(traceTimeout);
     clearInterval(elapsedInterval);
-  } else if (canvas && context) {
+  } else if (canvas && context && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     cancelAnimationFrame(animationFrame);
     drawNetwork();
   }
