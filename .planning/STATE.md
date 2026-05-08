@@ -73,5 +73,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-08
-Stopped at: Phase 4 complete and human-approved. Phase 5 (Polish) is next.
-Resume: /gsd-discuss-phase 5
+Stopped at: Phase 5 context gathered. 15 decisions captured (wordmark, og-image, mobile CTA, reduced-motion, font/LCP).
+Resume: /gsd-plan-phase 5
