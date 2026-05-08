@@ -313,10 +313,16 @@ if (canvas && context) {
   }
 }
 
+// Module-scope timer handles so visibilitychange and pagehide can cancel them
+let traceTimeout = null;
+let elapsedInterval = null;
+
 // Tab visibility pause per D-17
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     cancelAnimationFrame(animationFrame);
+    clearTimeout(traceTimeout);
+    clearInterval(elapsedInterval);
   } else if (canvas && context) {
     cancelAnimationFrame(animationFrame);
     drawNetwork();
@@ -326,6 +332,8 @@ document.addEventListener("visibilitychange", () => {
 // Existing pagehide cancel — keep unchanged
 window.addEventListener("pagehide", () => {
   cancelAnimationFrame(animationFrame);
+  clearTimeout(traceTimeout);
+  clearInterval(elapsedInterval);
 });
 
 // ============================================================
@@ -358,11 +366,9 @@ if (consoleEl) {
 
   const rows = Array.from(consoleEl.querySelectorAll(".flow-row"));
 
-  let traceTimeout = null;
   let currentLoop = 0;
   let currentStep = 0;
   let stepStart = null;
-  let elapsedInterval = null;
 
   function activateRow(stepIndex) {
     rows.forEach((row, i) => {
