@@ -46,28 +46,28 @@
 
 ### Process
 
-- [ ] **PROC-01**: Process section has 5 named steps written from the founder's point of view — what the client experiences at each stage, not what Manik does internally
-- [ ] **PROC-02**: Process copy emphasizes async-first working style (weekly Loom updates, no endless meetings) and speed as a solo operator advantage
-- [ ] **PROC-03**: Process section uses a horizontal timeline layout (or equivalent stepped visual at desktop; stacked at mobile)
+- [x] **PROC-01**: Process section has 5 named steps written from the founder's point of view — what the client experiences at each stage, not what Manik does internally — Validated in Phase 4
+- [x] **PROC-02**: Process copy emphasizes async-first working style (weekly Loom updates, no endless meetings) and speed as a solo operator advantage — Validated in Phase 4
+- [x] **PROC-03**: Process section uses a horizontal timeline layout (or equivalent stepped visual at desktop; stacked at mobile) — Validated in Phase 4
 
 ### About
 
-- [ ] **ABOU-01**: About section exists (new — not in current site) with a first-person bio; 2–3 sentences with one strong credibility anchor; not a resume or skills list
-- [ ] **ABOU-02**: About copy frames solo operation as the key differentiator: "You work directly with me, not through account managers or junior devs"
-- [ ] **ABOU-03**: About section links to GitHub and LinkedIn
-- [ ] **ABOU-04**: About section uses a split layout (consistent with the established grid pattern)
+- [x] **ABOU-01**: About section exists (new — not in current site) with a first-person bio; 2–3 sentences with one strong credibility anchor; not a resume or skills list — Validated in Phase 4
+- [x] **ABOU-02**: About copy frames solo operation as the key differentiator: "You work directly with me, not through account managers or junior devs" — Validated in Phase 4
+- [x] **ABOU-03**: About section links to GitHub and LinkedIn — Validated in Phase 4
+- [x] **ABOU-04**: About section uses a split layout (consistent with the established grid pattern) — Validated in Phase 4
 
 ### CTA & Contact
 
-- [ ] **CTA-01**: A dedicated CTA/contact section at the bottom uses a direct calendar booking link (Calendly or Cal.com) as the primary action — not a contact form as the primary path
-- [ ] **CTA-02**: The "Currently taking 1–2 new projects" scarcity signal is reinforced near the CTA section
-- [ ] **CTA-03**: A lightweight secondary contact form is available with startup-qualifying fields (name, company, what you're building, timeline) — no phone field
-- [ ] **CTA-04**: Form submission shows an immediate optimistic UI response (not waiting for Netlify function cold start)
+- [x] **CTA-01**: A dedicated CTA/contact section at the bottom uses a direct calendar booking link (Calendly or Cal.com) as the primary action — not a contact form as the primary path — Validated in Phase 4
+- [x] **CTA-02**: The "Currently taking 1–2 new projects" scarcity signal is reinforced near the CTA section — Validated in Phase 4
+- [x] **CTA-03**: A lightweight secondary contact form is available with startup-qualifying fields (name, company, what you're building, timeline) — no phone field — Validated in Phase 4
+- [x] **CTA-04**: Form submission shows an immediate optimistic UI response (not waiting for Netlify function cold start) — Validated in Phase 4
 
 ### Footer
 
-- [ ] **FOOT-01**: Footer contains email and LinkedIn only — no phone number, no WhatsApp
-- [ ] **FOOT-02**: Copyright year updates automatically via JS
+- [x] **FOOT-01**: Footer contains email and LinkedIn only — no phone number, no WhatsApp — Validated in Phase 4
+- [x] **FOOT-02**: Copyright year updates automatically via JS — Validated in Phase 4
 
 ### Performance & Technical
 
@@ -142,19 +142,19 @@
 | SERV-03 | Phase 3 | Pending |
 | PORT-01 | Phase 3 | Pending |
 | PORT-02 | Phase 3 | Pending |
-| PROC-01 | Phase 4 | Pending |
-| PROC-02 | Phase 4 | Pending |
-| PROC-03 | Phase 4 | Pending |
-| ABOU-01 | Phase 4 | Pending |
-| ABOU-02 | Phase 4 | Pending |
-| ABOU-03 | Phase 4 | Pending |
-| ABOU-04 | Phase 4 | Pending |
-| CTA-01 | Phase 4 | Pending |
-| CTA-02 | Phase 4 | Pending |
-| CTA-03 | Phase 4 | Pending |
-| CTA-04 | Phase 4 | Pending |
-| FOOT-01 | Phase 4 | Pending |
-| FOOT-02 | Phase 4 | Pending |
+| PROC-01 | Phase 4 | Validated |
+| PROC-02 | Phase 4 | Validated |
+| PROC-03 | Phase 4 | Validated |
+| ABOU-01 | Phase 4 | Validated |
+| ABOU-02 | Phase 4 | Validated |
+| ABOU-03 | Phase 4 | Validated |
+| ABOU-04 | Phase 4 | Validated |
+| CTA-01 | Phase 4 | Validated |
+| CTA-02 | Phase 4 | Validated |
+| CTA-03 | Phase 4 | Validated |
+| CTA-04 | Phase 4 | Validated |
+| FOOT-01 | Phase 4 | Validated |
+| FOOT-02 | Phase 4 | Validated |
 | PERF-01 | Phase 5 | Pending |
 | PERF-02 | Phase 5 | Pending |
 | PERF-03 | Phase 5 | Pending |

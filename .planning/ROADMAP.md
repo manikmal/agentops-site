@@ -9,7 +9,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 - [x] **Phase 1: Foundation** - Design system, typography, floating header, and full SME language audit *(Complete — 2026-05-07)*
 - [x] **Phase 2: Hero** - Startup-native headline, agent orchestration visual, canvas performance fix, scarcity signal *(Complete — 2026-05-07)*
 - [x] **Phase 3: Core Sections** - Even-split tech strip, dual-audience services, NDA portfolio cards *(Complete — 2026-05-07)*
-- [ ] **Phase 4: Trust & Conversion** - Process timeline, about section (new), CTA, footer
+- [x] **Phase 4: Trust & Conversion** - Process timeline, about section (new), CTA, footer *(Complete — 2026-05-08)*
 - [ ] **Phase 5: Polish** - Responsive layout, iOS Safari gate, performance, SEO meta
 
 ## Phase Details
@@ -88,13 +88,13 @@ Cross-cutting constraints: `.timeline-step` preserved in all compound-selector e
 **Plans**: 3 plans
 Plans:
 **Wave 1**
-- [ ] 04-01-PLAN.md — Process section rewrite: nav href fix, id="process", 5-step timeline (Discovery→Iterate), CSS grid 4→5 columns
+- [x] 04-01-PLAN.md — Process section rewrite: nav href fix, id="process", 5-step timeline (Discovery→Iterate), CSS grid 4→5 columns
 
 **Wave 2** *(depends on 04-01)*
-- [ ] 04-02-PLAN.md — About section (new): DOM insertion after #portfolio, nav href fix, split layout with credentials-card, full About CSS block
+- [x] 04-02-PLAN.md — About section (new): DOM insertion after #portfolio, nav href fix, split layout with credentials-card, full About CSS block
 
 **Wave 3** *(depends on 04-01, 04-02)*
-- [ ] 04-03-PLAN.md — CTA rebuild, footer update, JS wiring: Calendly button, qualifying form, copyright year, spotlight selector + credentials-card
+- [x] 04-03-PLAN.md — CTA rebuild, footer update, JS wiring: Calendly button, qualifying form, copyright year, spotlight selector + credentials-card
 
 Cross-cutting constraints: CSS token variables only — no inline hex; `reveal` class on all new section headings, bio, credentials-card, contact divs; iOS Safari — `.credentials-card` has NO `backdrop-filter`; `#contact` ID preserved; `data-lead-form` / `data-form-status` attributes preserved
 **UI hint**: yes
@@ -119,5 +119,5 @@ Cross-cutting constraints: CSS token variables only — no inline hex; `reveal` 
 | 1. Foundation | 3/3 | Complete | 2026-05-07 |
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
 | 3. Core Sections | 3/3 | Complete | 2026-05-07 |
-| 4. Trust & Conversion | 0/3 | Planning complete | - |
+| 4. Trust & Conversion | 3/3 | Complete | 2026-05-08 |
 | 5. Polish | 0/TBD | Not started | - |
