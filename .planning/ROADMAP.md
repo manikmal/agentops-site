@@ -109,7 +109,17 @@ Cross-cutting constraints: CSS token variables only — no inline hex; `reveal` 
   3. In Chrome DevTools with 4x CPU throttle, the canvas animation runs at ≤16ms/frame; enabling `prefers-reduced-motion` disables all CSS transitions and the canvas animation entirely
   4. A simulated-3G Lighthouse run reports LCP ≤2.5s, no render-blocking resources, and all below-fold images have `loading="lazy"` with explicit dimensions
   5. Pasting the page URL into a social media link preview shows the correct `og:title`, `og:description`, and `og:image`
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+**Wave 1** *(parallel — zero file overlap)*
+- [ ] 05-01-PLAN.md — SVG wordmark: create wordmark.svg with path-converted text (violet AgentOps + white Studio)
+- [ ] 05-02-PLAN.md — HTML head + structure: og: meta block, preload hints, wordmark.svg references, mobile CTA DOM reorder
+- [ ] 05-03-PLAN.md — CSS polish: prefers-reduced-motion kill-all, mix-blend-mode removal, compact mobile CTA styles at 940px
+- [ ] 05-04-PLAN.md — JS fix + lazy images: canvas reduced-motion guard, visibilitychange guard, below-fold lazy loading
+
+**Wave 2** *(depends on 05-02 for og-image URL context)*
+- [ ] 05-05-PLAN.md — og-image.png: branded 1200×630 social card + iOS Safari + full phase verification checkpoint
+
 **UI hint**: yes
 
 ## Progress
@@ -120,4 +130,4 @@ Cross-cutting constraints: CSS token variables only — no inline hex; `reveal` 
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
 | 3. Core Sections | 3/3 | Complete | 2026-05-07 |
 | 4. Trust & Conversion | 3/3 | Complete | 2026-05-08 |
-| 5. Polish | 0/TBD | Not started | - |
+| 5. Polish | 0/5 | Not started | - |
