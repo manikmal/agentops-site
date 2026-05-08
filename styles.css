@@ -178,7 +178,6 @@ textarea {
   display: block;
   height: 44px;
   width: auto;
-  mix-blend-mode: screen;
 }
 
 .footer-brand {
@@ -288,7 +287,6 @@ textarea {
   height: 90px;
   width: auto;
   margin-bottom: 24px;
-  mix-blend-mode: screen;
 }
 
 .eyebrow {
@@ -592,6 +590,10 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
   .logo-strip {
     overflow: visible;
     display: flex;
