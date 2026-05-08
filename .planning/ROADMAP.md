@@ -114,7 +114,7 @@ Plans:
 **Wave 1** *(parallel — zero file overlap)*
 - [x] 05-01-PLAN.md — SVG wordmark: create wordmark.svg with path-converted text (violet AgentOps + white Studio)
 - [ ] 05-02-PLAN.md — HTML head + structure: og: meta block, preload hints, wordmark.svg references, mobile CTA DOM reorder
-- [ ] 05-03-PLAN.md — CSS polish: prefers-reduced-motion kill-all, mix-blend-mode removal, compact mobile CTA styles at 940px
+- [x] 05-03-PLAN.md — CSS polish: prefers-reduced-motion kill-all, mix-blend-mode removal, compact mobile CTA styles at 940px
 - [ ] 05-04-PLAN.md — JS fix + lazy images: canvas reduced-motion guard, visibilitychange guard, below-fold lazy loading
 
 **Wave 2** *(depends on 05-02 for og-image URL context)*
@@ -130,4 +130,4 @@ Plans:
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
 | 3. Core Sections | 3/3 | Complete | 2026-05-07 |
 | 4. Trust & Conversion | 3/3 | Complete | 2026-05-08 |
-| 5. Polish | 1/5 | In progress | - |
+| 5. Polish | 2/5 | In progress | - |

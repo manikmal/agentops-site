@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 ## Current Position
 
 Phase: 5 of 5 (Polish)
-Plan: 1 of 5 in current phase
+Plan: 3 of 5 in current phase
 Status: In progress
-Last activity: 2026-05-08 — 05-01 complete: SVG wordmark created (wordmark.svg)
+Last activity: 2026-05-08 — 05-03 complete: kill-all prefers-reduced-motion, mix-blend-mode removed, compact mobile CTA
 
 Progress: [██████████] 82%
 
@@ -50,6 +50,7 @@ Recent decisions affecting current work:
 - 03-02: portfolio-grid changed from repeat(3,1fr) to repeat(2,1fr) for balanced 2+2 card layout; .service-card has no backdrop-filter (iOS Safari constraint)
 - 03-03: 10 inline SVG pills use verbatim brand paths — no external sprite; portfolio NDA cards use anonymous client labels (Series-A Fintech, Retail Chain, etc.) per threat model T-03-04
 - 05-01: wordmark.svg uses system-ui fallback font stack (not path-converted), acceptable for v1; viewBox 0 0 180 28; Studio x=106
+- 05-03: mix-blend-mode: screen removed from both .brand-wordmark and .hero-wordmark (SVG transparent bg); kill-all reduced-motion at top of media block; .btn-book-call compact mobile (8px 12px / 0.8125rem / margin-left:auto) inside 940px breakpoint
 
 ### Pending Todos
 
@@ -74,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-08
-Stopped at: 05-01 complete. wordmark.svg created (628 bytes, violet+white, system-ui, no web font dep).
-Resume: /gsd-execute-phase 5 (next: 05-02)
+Stopped at: 05-03 complete. prefers-reduced-motion kill-all, mix-blend-mode removed, mobile CTA compact styles.
+Resume: /gsd-execute-phase 5 (next: 05-04)
