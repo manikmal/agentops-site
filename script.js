@@ -79,7 +79,13 @@ if (leadForm) {
     } catch (error) {
       const email = "manikmalhotra6@gmail.com";
       if (formStatus) {
-        formStatus.innerHTML = `Something went wrong. Email <a href="mailto:${email}">${email}</a> directly.`;
+        formStatus.textContent = "Something went wrong. Email ";
+        const link = document.createElement("a");
+        link.href = `mailto:${email}`;
+        link.textContent = email;
+        formStatus.appendChild(link);
+        const tail = document.createTextNode(" directly.");
+        formStatus.appendChild(tail);
         formStatus.dataset.state = "error";
       }
     } finally {
