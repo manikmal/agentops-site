@@ -920,6 +920,10 @@ h3 {
   color: var(--color-success);
 }
 
+[data-form-status][data-state="error"] {
+  color: var(--color-error);
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
