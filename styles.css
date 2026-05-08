@@ -1020,6 +1020,13 @@ h3 {
   .about-grid {
     grid-template-columns: 1fr;
   }
+
+  /* Mobile CTA: always visible, compact — D-06/D-07 */
+  .btn-book-call {
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 640px) {
