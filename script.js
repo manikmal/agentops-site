@@ -174,15 +174,19 @@ const canvas = document.querySelector("[data-agent-canvas]");
 const context = canvas ? canvas.getContext("2d") : null;
 let particles = [];
 let animationFrame = 0;
+let canvasW = 0;
+let canvasH = 0;
 
 function resizeCanvas() {
   if (!canvas || !context) return;
   const ratio = Math.min(window.devicePixelRatio || 1, 2);
   const bounds = canvas.getBoundingClientRect();
-  canvas.width = Math.floor(bounds.width * ratio);
-  canvas.height = Math.floor(bounds.height * ratio);
+  canvasW = bounds.width;
+  canvasH = bounds.height;
+  canvas.width = Math.floor(canvasW * ratio);
+  canvas.height = Math.floor(canvasH * ratio);
   context.setTransform(ratio, 0, 0, ratio, 0, 0);
-  createParticles(bounds.width, bounds.height);
+  createParticles(canvasW, canvasH);
 }
 
 function createParticles(width, height) {
@@ -204,8 +208,8 @@ function createParticles(width, height) {
 
 function drawNetwork() {
   if (!canvas || !context) return;
-  const width = canvas.clientWidth;
-  const height = canvas.clientHeight;
+  const width = canvasW;
+  const height = canvasH;
 
   context.clearRect(0, 0, width, height);
   context.fillStyle = "rgba(8, 10, 10, 0.5)";
