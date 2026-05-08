@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-05-06)
 ## Current Position
 
 Phase: 5 of 5 (Polish)
-Plan: 0 of 5 in current phase
-Status: Ready to execute
-Last activity: 2026-05-08 — Phase 5 planned (5 plans, 2 waves)
+Plan: 1 of 5 in current phase
+Status: In progress
+Last activity: 2026-05-08 — 05-01 complete: SVG wordmark created (wordmark.svg)
 
-Progress: [██████████] 80%
+Progress: [██████████] 82%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: ~5 min/plan
 - Total execution time: ~20 min
 
@@ -30,7 +30,7 @@ Progress: [██████████] 80%
 | 02-hero | 3 | ~15 min | ~5 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01, 02-02, 02-03
+- Last 5 plans: 02-01, 02-02, 02-03, 04-03, 05-01
 - Trend: on track
 
 *Updated after each plan completion*
@@ -49,6 +49,7 @@ Recent decisions affecting current work:
 - 03-01: Nav Work→#portfolio, Process→#contact, About→#contact per plan spec; hero "View work" button (#portfolio) left untouched
 - 03-02: portfolio-grid changed from repeat(3,1fr) to repeat(2,1fr) for balanced 2+2 card layout; .service-card has no backdrop-filter (iOS Safari constraint)
 - 03-03: 10 inline SVG pills use verbatim brand paths — no external sprite; portfolio NDA cards use anonymous client labels (Series-A Fintech, Retail Chain, etc.) per threat model T-03-04
+- 05-01: wordmark.svg uses system-ui fallback font stack (not path-converted), acceptable for v1; viewBox 0 0 180 28; Studio x=106
 
 ### Pending Todos
 
@@ -73,5 +74,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-05-08
-Stopped at: Phase 5 context gathered. 15 decisions captured (wordmark, og-image, mobile CTA, reduced-motion, font/LCP).
-Resume: /gsd-execute-phase 5
+Stopped at: 05-01 complete. wordmark.svg created (628 bytes, violet+white, system-ui, no web font dep).
+Resume: /gsd-execute-phase 5 (next: 05-02)
