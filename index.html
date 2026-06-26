@@ -72,8 +72,14 @@
                 <span></span>
               </div>
               <div class="console-tabs">
-                <span class="console-tab active">pipeline.js</span>
-                <span class="console-tab">config.toml</span>
+                <span class="console-tab active">
+                  <svg class="tab-icon icon-js" viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M3 3h18v18H3V3m10.74 13.91c.21-.36.43-.86.43-1.46h1.72c0 1.25-.8 2.07-2.07 2.07-1.39 0-2.12-.91-2.12-2.17V12.1c0-1.25.75-2.08 2.02-2.08 1.2 0 1.95.73 1.95 1.9h-1.72c0-.58-.33-.97-.84-.97-.56 0-.84.48-.84 1.15v3.29c0 .66.27 1.15.82 1.15.28 0 .5-.1.67-.33M18 10.51v4.86c0 1.22-.64 2.13-1.92 2.13-1.2 0-1.83-.7-1.83-1.77h1.66c0 .48.24.78.67.78.43 0 .66-.35.66-1.07v-.48c-.2.25-.56.45-.98.45-1.09 0-1.79-.81-1.79-2.05v-2.85c0-1.22.7-2.03 1.79-2.03.45 0 .8.2 1 .47v-.36H18m-1.75 1.83c-.5 0-.75.36-.75.95v2.24c0 .6.24.96.75.96.53 0 .76-.36.76-.96v-2.24c0-.59-.23-.95-.76-.95z"/></svg>
+                  pipeline.js
+                </span>
+                <span class="console-tab">
+                  <svg class="tab-icon icon-toml" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                  config.toml
+                </span>
               </div>
               <strong data-console-label>startup-pipeline</strong>
             </div>
@@ -110,6 +116,14 @@
                 </div>
                 <em>•</em>
               </div>
+            </div>
+            <div class="console-footer">
+              <span class="console-status">
+                <span class="status-dot"></span>
+                System: Active
+              </span>
+              <span class="console-stat">Latency: 42ms</span>
+              <span class="console-stat">Engine: v1.4.2</span>
             </div>
           </div>
         </div>
@@ -313,7 +327,10 @@
           <p class="eyebrow">How we work</p>
           <h2><span class="text-gradient">From first conversation to shipped product.</span></h2>
         </div>
-        <div class="timeline">
+        <div class="timeline" data-timeline>
+          <div class="timeline-progress-line" aria-hidden="true">
+            <div class="timeline-progress-fill" data-timeline-fill></div>
+          </div>
           <article class="timeline-step reveal">
             <span>01</span>
             <h3>Discovery</h3>
@@ -365,26 +382,26 @@
         <div class="contact-form-wrapper reveal">
           <p class="contact-form-bridge">Prefer to reach out first?</p>
           <form class="contact-form" data-lead-form>
-            <label>
-              Your name
-              <input name="name" type="text" placeholder="Your name" required>
-            </label>
-            <label>
-              Company
-              <input name="company" type="text" placeholder="Company name">
-            </label>
-            <label>
-              Your email
-              <input name="email" type="email" placeholder="you@company.com" required autocomplete="email">
-            </label>
-            <label>
-              What are you building?
-              <textarea name="project" rows="4" placeholder="Describe what you're working on — even rough ideas are fine." required></textarea>
-            </label>
-            <label>
-              Your timeline
-              <input name="timeline" type="text" placeholder="e.g. Looking to start in 4–6 weeks">
-            </label>
+            <div class="form-group">
+              <input name="name" type="text" placeholder=" " required id="form-name">
+              <label for="form-name">Your name</label>
+            </div>
+            <div class="form-group">
+              <input name="company" type="text" placeholder=" " id="form-company">
+              <label for="form-company">Company</label>
+            </div>
+            <div class="form-group">
+              <input name="email" type="email" placeholder=" " required autocomplete="email" id="form-email">
+              <label for="form-email">Your email</label>
+            </div>
+            <div class="form-group">
+              <textarea name="project" rows="4" placeholder=" " required id="form-project"></textarea>
+              <label for="form-project">What are you building?</label>
+            </div>
+            <div class="form-group">
+              <input name="timeline" type="text" placeholder=" " id="form-timeline">
+              <label for="form-timeline">Your timeline</label>
+            </div>
             <button class="btn btn-primary" type="submit">Send message</button>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>

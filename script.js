@@ -147,11 +147,13 @@ document.querySelectorAll(".service-card, .portfolio-card, .credentials-card, .t
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
-    card.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, rgba(124, 92, 252, 0.12), transparent 34%)`;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+    card.style.setProperty("--spotlight-opacity", "1");
   });
 
   card.addEventListener("pointerleave", () => {
-    card.style.backgroundImage = "";
+    card.style.setProperty("--spotlight-opacity", "0");
   });
 });
 
@@ -499,4 +501,31 @@ if (consoleEl) {
 const copyrightYear = document.getElementById("copyright-year");
 if (copyrightYear) {
   copyrightYear.textContent = new Date().getFullYear();
+}
+
+// Scroll-linked timeline progress tracking
+const timeline = document.querySelector("[data-timeline]");
+const timelineFill = document.querySelector("[data-timeline-fill]");
+
+if (timeline && timelineFill) {
+  const updateTimelineProgress = () => {
+    const rect = timeline.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Trigger progress fill starting when timeline top reaches 70% of viewport height
+    const triggerPoint = windowHeight * 0.7;
+    const totalHeight = rect.height;
+    
+    const startScroll = rect.top - triggerPoint;
+    const scrolled = -startScroll;
+    
+    let percent = (scrolled / totalHeight) * 100;
+    percent = Math.max(0, Math.min(100, percent));
+    
+    timeline.style.setProperty("--scroll-fill", `${percent}%`);
+  };
+  
+  window.addEventListener("scroll", updateTimelineProgress, { passive: true });
+  window.addEventListener("resize", updateTimelineProgress, { passive: true });
+  updateTimelineProgress(); // Initial execution
 }
