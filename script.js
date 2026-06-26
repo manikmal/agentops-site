@@ -544,7 +544,7 @@ if (navContainer && hoverPill) {
       const left = rect.left - parentRect.left;
       
       hoverPill.style.width = `${rect.width}px`;
-      hoverPill.style.transform = `translate(${left}px, -50%)`;
+      hoverPill.style.transform = `translate3d(${left}px, -50%, 0)`;
       hoverPill.style.opacity = "1";
     });
   });
