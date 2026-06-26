@@ -149,7 +149,7 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
-document.querySelectorAll(".service-card, .portfolio-card, .credentials-card").forEach((card) => {
+document.querySelectorAll(".service-card, .portfolio-card, .credentials-card, .timeline-step").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -374,19 +374,53 @@ if (consoleEl) {
   let currentStep = 0;
   let stepStart = null;
 
+  function typeText(el, text, speed = 20) {
+    el.textContent = "";
+    let index = 0;
+    function type() {
+      if (index < text.length) {
+        el.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  }
+
   function activateRow(stepIndex) {
     rows.forEach((row, i) => {
       row.classList.toggle("active", i === stepIndex);
+      const tag = row.querySelector(".flow-tag");
+      if (tag) {
+        if (i < stepIndex) {
+          tag.textContent = "OK";
+          tag.className = "flow-tag tag-ok";
+        } else if (i === stepIndex) {
+          tag.textContent = "RUN";
+          tag.className = "flow-tag tag-run";
+        } else {
+          tag.textContent = "QUE";
+          tag.className = "flow-tag tag-que";
+        }
+      }
     });
-    const em = rows[stepIndex] && rows[stepIndex].querySelector("em");
-    if (em) {
-      em.textContent = "0s";
-      stepStart = Date.now();
-      clearInterval(elapsedInterval);
-      elapsedInterval = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - stepStart) / 1000);
-        em.textContent = elapsed + "s";
-      }, 1000);
+
+    const activeRow = rows[stepIndex];
+    if (activeRow) {
+      const p = activeRow.querySelector("p");
+      if (p && p.dataset.taskText) {
+        typeText(p, p.dataset.taskText);
+      }
+      const em = activeRow.querySelector("em");
+      if (em) {
+        em.textContent = "0s";
+        stepStart = Date.now();
+        clearInterval(elapsedInterval);
+        elapsedInterval = setInterval(() => {
+          const elapsed = Math.floor((Date.now() - stepStart) / 1000);
+          em.textContent = elapsed + "s";
+        }, 1000);
+      }
     }
   }
 
@@ -396,6 +430,15 @@ if (consoleEl) {
       row.classList.remove("active");
       const em = row.querySelector("em");
       if (em) em.textContent = "•";
+      const tag = row.querySelector(".flow-tag");
+      if (tag) {
+        tag.textContent = "QUE";
+        tag.className = "flow-tag tag-que";
+      }
+      const p = row.querySelector("p");
+      if (p && p.dataset.taskText) {
+        p.textContent = p.dataset.taskText;
+      }
     });
   }
 
@@ -405,7 +448,10 @@ if (consoleEl) {
       const strong = rows[i].querySelector("strong");
       const p = rows[i].querySelector("p");
       if (strong) strong.textContent = step.agent;
-      if (p) p.textContent = step.task;
+      if (p) {
+        p.dataset.taskText = step.task;
+        p.textContent = step.task;
+      }
     });
   }
 

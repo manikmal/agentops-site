@@ -27,8 +27,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="wordmark.svg">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -53,10 +53,12 @@
     <main id="top">
       <section class="hero section-dark">
         <canvas class="agent-canvas" data-agent-canvas aria-hidden="true"></canvas>
+        <div class="glow-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="glow-orb hero-orb-2" aria-hidden="true"></div>
         <div class="hero-grid">
           <div class="hero-copy reveal">
             <img src="wordmark.svg" alt="AgentOps Studio" class="hero-wordmark" width="180" height="28">
-            <h1>AI systems built to run your business.</h1>
+            <h1><span class="text-gradient">AI systems built to run your business.</span></h1>
             <p class="hero-lede">I engineer the agent pipelines, integrations, and full-stack builds your team needs to scale.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#contact">Book a discovery call</a>
@@ -69,14 +71,20 @@
           </div>
           <div class="ops-console reveal" aria-label="Live automation console preview" data-agent-trace>
             <div class="console-top">
-              <span></span>
-              <span></span>
-              <span></span>
+              <div class="window-buttons">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="console-tabs">
+                <span class="console-tab active">pipeline.js</span>
+                <span class="console-tab">config.toml</span>
+              </div>
               <strong data-console-label>startup-pipeline</strong>
             </div>
             <div class="console-body">
               <div class="flow-row active">
-                <span class="flow-dot"></span>
+                <span class="flow-tag tag-run">RUN</span>
                 <div>
                   <strong>Orchestrator</strong>
                   <p>Merge detected on main</p>
@@ -84,7 +92,7 @@
                 <em>0s</em>
               </div>
               <div class="flow-row">
-                <span class="flow-dot"></span>
+                <span class="flow-tag tag-que">QUE</span>
                 <div>
                   <strong>Build Agent</strong>
                   <p>Compiling and bundling</p>
@@ -92,7 +100,7 @@
                 <em>•</em>
               </div>
               <div class="flow-row">
-                <span class="flow-dot"></span>
+                <span class="flow-tag tag-que">QUE</span>
                 <div>
                   <strong>Test Agent</strong>
                   <p>Running integration suite</p>
@@ -100,7 +108,7 @@
                 <em>•</em>
               </div>
               <div class="flow-row">
-                <span class="flow-dot"></span>
+                <span class="flow-tag tag-que">QUE</span>
                 <div>
                   <strong>Deploy Agent</strong>
                   <p>Pushing to production</p>
@@ -158,9 +166,10 @@
       </section>
 
       <section class="section services-section" id="services">
+        <div class="glow-orb services-orb" aria-hidden="true"></div>
         <div class="section-heading reveal">
           <p class="eyebrow">What I Build</p>
-          <h2>Built for how you actually work.</h2>
+          <h2><span class="text-gradient">Built for how you actually work.</span></h2>
         </div>
         <div class="services-clusters">
 
@@ -212,7 +221,7 @@
       <section class="section portfolio-section" id="portfolio">
         <div class="section-heading reveal">
           <p class="eyebrow">Portfolio systems</p>
-          <h2>Products with AI assistant layers built in.</h2>
+          <h2><span class="text-gradient">Products with AI assistant layers built in.</span></h2>
           <p>A selection of recent work — client details protected under NDA.</p>
         </div>
         <div class="portfolio-grid">
@@ -222,6 +231,11 @@
               <span>Series-A Fintech — Startup</span>
               <h3>AI Compliance Pipeline</h3>
               <p>Built a multi-agent system that monitors transactions in real time, flags regulatory anomalies, and routes cases for human review — cutting compliance review time by 70%.</p>
+              <div class="card-tags">
+                <span class="tag">Docker</span>
+                <span class="tag">Python</span>
+                <span class="tag">LangChain</span>
+              </div>
             </div>
           </article>
           <article class="portfolio-card reveal">
@@ -230,6 +244,11 @@
               <span>Product Team — Startup</span>
               <h3>DevOps &amp; CI/CD Automation</h3>
               <p>Designed and implemented a GitHub Actions pipeline with Docker-based staging environments, automated test gates, and zero-downtime deploys — shipping cycle dropped from 3 days to 4 hours.</p>
+              <div class="card-tags">
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Docker</span>
+                <span class="tag">AWS</span>
+              </div>
             </div>
           </article>
           <article class="portfolio-card reveal">
@@ -238,6 +257,11 @@
               <span>Retail Chain — SME</span>
               <h3>WhatsApp Workflow Automation</h3>
               <p>Automated the full order-confirmation and customer-support loop via WhatsApp — from stock queries and delivery updates to escalation routing — handling 800+ messages a day without staff involvement.</p>
+              <div class="card-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">WhatsApp API</span>
+                <span class="tag">Meta</span>
+              </div>
             </div>
           </article>
           <article class="portfolio-card reveal">
@@ -246,6 +270,11 @@
               <span>Service Business — SME</span>
               <h3>Social Media &amp; CRM Integration</h3>
               <p>Connected Instagram, Facebook, and a Google Sheets CRM into a single automation — leads captured from DMs and comments flow directly into the pipeline with follow-up sequences triggered automatically.</p>
+              <div class="card-tags">
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Zapier</span>
+                <span class="tag">CRM</span>
+              </div>
             </div>
           </article>
         </div>
@@ -254,7 +283,7 @@
       <section id="about" class="section about-section">
         <div class="section-heading reveal">
           <p class="eyebrow">About</p>
-          <h2>You work directly with me.</h2>
+          <h2><span class="text-gradient">You work directly with me.</span></h2>
         </div>
         <div class="about-grid">
           <!-- Left: bio + social links -->
@@ -279,7 +308,7 @@
       <section class="section process-section" id="process">
         <div class="section-heading reveal">
           <p class="eyebrow">How we work</p>
-          <h2>From first conversation to shipped product.</h2>
+          <h2><span class="text-gradient">From first conversation to shipped product.</span></h2>
         </div>
         <div class="timeline">
           <article class="timeline-step reveal">
@@ -311,10 +340,11 @@
       </section>
 
       <section class="contact-section section-dark" id="contact">
+        <div class="glow-orb contact-orb" aria-hidden="true"></div>
         <!-- Left: calendar CTA (dominant) -->
         <div class="contact-copy reveal">
           <p class="eyebrow">Work together</p>
-          <h2>Ready to build something?</h2>
+          <h2><span class="text-gradient">Ready to build something?</span></h2>
           <p>I work with a small number of clients at a time so every engagement gets my full attention. If the timing is right, let's talk.</p>
           <div class="scarcity-signal">
             <span class="scarcity-dot" aria-hidden="true"></span>
