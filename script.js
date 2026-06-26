@@ -4,14 +4,7 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const leadForm = document.querySelector("[data-lead-form]");
 const formStatus = document.querySelector("[data-form-status]");
 
-const marqueeTrack = document.querySelector(".marquee-track");
-if (marqueeTrack && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  Array.from(marqueeTrack.children).forEach((item) => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    marqueeTrack.appendChild(clone);
-  });
-}
+
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
@@ -149,7 +142,7 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
-document.querySelectorAll(".service-card, .portfolio-card, .credentials-card, .timeline-step").forEach((card) => {
+document.querySelectorAll(".service-card, .portfolio-card, .credentials-card, .timeline-step, .badge-capsule").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left;
