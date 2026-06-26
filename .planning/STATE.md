@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-05-06)
 
 **Core value:** A startup founder lands on the site and immediately feels they've found a serious technical partner who builds AI products end-to-end — not a freelancer running automations for small businesses.
-**Current focus:** Phase 5 — Polish
+**Current focus:** All phases complete — ready to deploy
 
 ## Current Position
 

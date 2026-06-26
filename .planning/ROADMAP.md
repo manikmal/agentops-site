@@ -10,7 +10,7 @@ A ground-up redesign of the AgentOps Studio site — repositioning from "freelan
 - [x] **Phase 2: Hero** - Startup-native headline, agent orchestration visual, canvas performance fix, scarcity signal *(Complete — 2026-05-07)*
 - [x] **Phase 3: Core Sections** - Even-split tech strip, dual-audience services, NDA portfolio cards *(Complete — 2026-05-07)*
 - [x] **Phase 4: Trust & Conversion** - Process timeline, about section (new), CTA, footer *(Complete — 2026-05-08)*
-- [ ] **Phase 5: Polish** - Responsive layout, iOS Safari gate, performance, SEO meta
+- [x] **Phase 5: Polish** - Responsive layout, iOS Safari gate, performance, SEO meta *(Complete — 2026-05-08)*
 
 ## Phase Details
 
@@ -118,7 +118,7 @@ Plans:
 - [x] 05-04-PLAN.md — JS fix + lazy images: canvas reduced-motion guard, visibilitychange guard, below-fold lazy loading
 
 **Wave 2** *(depends on 05-02 for og-image URL context)*
-- [ ] 05-05-PLAN.md — og-image.png: branded 1200×630 social card + iOS Safari + full phase verification checkpoint
+- [x] 05-05-PLAN.md — og-image.png: branded 1200×630 social card + iOS Safari + full phase verification checkpoint
 
 **UI hint**: yes
 
@@ -130,4 +130,4 @@ Plans:
 | 2. Hero | 3/3 | Complete | 2026-05-07 |
 | 3. Core Sections | 3/3 | Complete | 2026-05-07 |
 | 4. Trust & Conversion | 3/3 | Complete | 2026-05-08 |
-| 5. Polish | 3/5 | In progress | - |
+| 5. Polish | 5/5 | Complete | 2026-05-08 |
