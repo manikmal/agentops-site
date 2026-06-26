@@ -32,6 +32,7 @@ exports.handler = async (event) => {
   const phone = clean(body.phone);
   const company = clean(body.company);
   const workflow = clean(body.workflow ?? body.project);
+  const timeline = clean(body.timeline);
 
   if (!name || !email || !workflow) {
     return {
@@ -54,6 +55,7 @@ exports.handler = async (event) => {
       section("Email", email),
       section("Phone / WhatsApp", phone || "Not provided"),
       section("Company", company || "Not provided"),
+      section("Timeline", timeline || "Not provided"),
       section("Workflow", workflow)
     ]
   };
