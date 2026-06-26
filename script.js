@@ -529,3 +529,27 @@ if (timeline && timelineFill) {
   window.addEventListener("resize", updateTimelineProgress, { passive: true });
   updateTimelineProgress(); // Initial execution
 }
+
+// Sliding hover dock highlight (navbar)
+const navContainer = document.querySelector("[data-nav]");
+const hoverPill = document.querySelector("[data-nav-hover-pill]");
+const navItems = document.querySelectorAll(".nav-link");
+
+if (navContainer && hoverPill) {
+  navItems.forEach((item) => {
+    item.addEventListener("pointerenter", () => {
+      // Calculate layout bounds relative to the navigation container
+      const parentRect = navContainer.getBoundingClientRect();
+      const rect = item.getBoundingClientRect();
+      const left = rect.left - parentRect.left;
+      
+      hoverPill.style.width = `${rect.width}px`;
+      hoverPill.style.transform = `translate(${left}px, -50%)`;
+      hoverPill.style.opacity = "1";
+    });
+  });
+
+  navContainer.addEventListener("pointerleave", () => {
+    hoverPill.style.opacity = "0";
+  });
+}

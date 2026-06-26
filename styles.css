@@ -1447,3 +1447,73 @@ h3 {
     box-shadow: 0 0 10px var(--color-success);
   }
 }
+
+/* === SLIDING NAV BACKDROP HIGHLIGHT === */
+.site-nav {
+  position: relative;
+}
+
+.nav-hover-pill {
+  position: absolute;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  transition: transform var(--duration-base) var(--ease-out),
+              width var(--duration-base) var(--ease-out),
+              opacity var(--duration-fast) var(--ease-out);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-link {
+  position: relative;
+  z-index: 1;
+}
+
+.js .site-nav a:hover,
+.js .nav-link:hover,
+.js .site-nav a:focus-visible,
+.js .nav-link:focus-visible {
+  background: transparent;
+}
+
+/* Scrolled state box-shadow & border overlay */
+.scrolled .site-header {
+  box-shadow: 
+    0 16px 36px -12px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+
+/* Active link breathing dot animation */
+.nav-link.is-active::after {
+  animation: pulse-active-dot 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-active-dot {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(0.9);
+    box-shadow: 0 0 2px var(--color-accent);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    box-shadow: 0 0 6px var(--color-accent);
+  }
+}
+
+@media (max-width: 940px) {
+  .nav-hover-pill {
+    display: none !important;
+  }
+  .js .site-nav a:hover,
+  .js .nav-link:hover,
+  .js .site-nav a:focus-visible,
+  .js .nav-link:focus-visible {
+    background: rgba(255, 255, 255, 0.07) !important;
+  }
+}
