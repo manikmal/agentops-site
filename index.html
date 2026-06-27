@@ -95,7 +95,9 @@
           <a class="nav-link" href="#contact">Contact</a>
         </nav>
         <div class="header-actions">
-          <a class="btn-primary btn-book-call" href="#contact">Book a call</a>
+          <div class="btn-magnetic-wrap">
+            <a class="btn-primary btn-book-call btn-magnetic" href="#contact"><span>Book a call</span></a>
+          </div>
           <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
         </div>
       </header>
@@ -112,8 +114,12 @@
             <h1><span class="text-gradient">AI systems built to run your business.</span></h1>
             <p class="hero-lede">I engineer the agent pipelines, integrations, and full-stack builds your team needs to scale.</p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Book a discovery call</a>
-              <a class="btn btn-secondary" href="#portfolio">View work</a>
+              <div class="btn-magnetic-wrap">
+                <a class="btn btn-primary btn-magnetic" href="#contact"><span>Book a discovery call</span></a>
+              </div>
+              <div class="btn-magnetic-wrap">
+                <a class="btn btn-secondary btn-magnetic" href="#portfolio"><span>View work</span></a>
+              </div>
             </div>
             <p class="scarcity-signal" aria-live="polite">
               <span class="scarcity-dot" aria-hidden="true"></span>
@@ -284,10 +290,50 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
                 <h3>DevOps &amp; Delivery</h3>
                 <p>I set up the infrastructure your team ships on — Docker, GitHub Actions, staging environments, zero-drama deploys, and monitoring so you know before your users do when something breaks.</p>
-              </article>
             </div>
           </div>
 
+        </div>
+
+        <div class="scope-estimator reveal" id="estimator">
+          <div class="estimator-header">
+            <h3 class="estimator-title">Interactive Project Estimator</h3>
+            <p class="estimator-desc">Select the modules you need for your roadmap. I'll estimate the engineering timeline and optimal stack.</p>
+          </div>
+          <div class="estimator-grid">
+            <div class="estimator-options">
+              <button class="estimator-pill" data-module="agent" data-time="3" data-stack="LangChain, OpenAI, LlamaIndex, Python">
+                <span class="pill-title">AI Agent Orchestration</span>
+                <span class="pill-badge">+3 weeks</span>
+              </button>
+              <button class="estimator-pill" data-module="devops" data-time="2" data-stack="Docker, GitHub Actions, AWS, Terraform">
+                <span class="pill-title">Staging & DevOps CI/CD</span>
+                <span class="pill-badge">+2 weeks</span>
+              </button>
+              <button class="estimator-pill" data-module="api" data-time="1" data-stack="Node.js, Webhooks, Meta/WhatsApp API, Zapier">
+                <span class="pill-title">API & CRM Integrations</span>
+                <span class="pill-badge">+1 week</span>
+              </button>
+              <button class="estimator-pill" data-module="database" data-time="2" data-stack="PostgreSQL, Vector DB (Pinecone / pgvector)">
+                <span class="pill-title">Knowledge Bases & RAG</span>
+                <span class="pill-badge">+2 weeks</span>
+              </button>
+            </div>
+            <div class="estimator-result service-card">
+              <div class="result-header">
+                <span>ESTIMATED DELIVERY</span>
+                <strong data-result-time>0 weeks</strong>
+              </div>
+              <div class="result-divider"></div>
+              <div class="result-body">
+                <span>RECOMMENDED STACK</span>
+                <p data-result-stack>Select modules to design your stack</p>
+              </div>
+              <div class="btn-magnetic-wrap">
+                <a href="#contact" class="btn btn-primary btn-magnetic"><span>Get started with this scope</span></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -426,12 +472,14 @@
             <span class="scarcity-dot" aria-hidden="true"></span>
             Currently taking 1–2 new projects
           </div>
-          <a
-            href="https://calendly.com/manikmalhotra6/30min"
-            target="_blank"
-            rel="noreferrer"
-            class="btn btn-primary cta-book-btn"
-          >Book a discovery call</a>
+          <div class="btn-magnetic-wrap">
+            <a
+              href="https://calendly.com/manikmalhotra6/30min"
+              target="_blank"
+              rel="noreferrer"
+              class="btn btn-primary cta-book-btn btn-magnetic"
+            ><span>Book a discovery call</span></a>
+          </div>
         </div>
 
         <!-- Right: qualifying form (secondary path) -->
@@ -458,7 +506,9 @@
               <input name="timeline" type="text" placeholder=" " id="form-timeline">
               <label for="form-timeline">Your timeline</label>
             </div>
-            <button class="btn btn-primary" type="submit">Send message</button>
+            <div class="btn-magnetic-wrap">
+              <button class="btn btn-primary btn-magnetic" type="submit"><span>Send message</span></button>
+            </div>
             <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
         </div>

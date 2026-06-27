@@ -142,18 +142,40 @@ const counterObserver = new IntersectionObserver(
 
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
-document.querySelectorAll(".service-card, .portfolio-card, .credentials-card, .timeline-step, .badge-capsule").forEach((card) => {
-  card.addEventListener("pointermove", (event) => {
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-    card.style.setProperty("--spotlight-opacity", "1");
-  });
+// Proximity-based mesh grid spotlight sync
+const syncGrids = document.querySelectorAll(".portfolio-grid, .service-grid, .timeline, .integrations-badges, .estimator-options");
 
-  card.addEventListener("pointerleave", () => {
-    card.style.setProperty("--spotlight-opacity", "0");
+syncGrids.forEach((grid) => {
+  grid.addEventListener("pointermove", (e) => {
+    const cards = grid.querySelectorAll(".service-card, .portfolio-card, .timeline-step, .badge-capsule, .estimator-pill");
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const dx = x - centerX;
+      const dy = y - centerY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      
+      const maxSpotlightDistance = 280;
+      if (distance < maxSpotlightDistance) {
+        card.style.setProperty("--mouse-x", `${x}px`);
+        card.style.setProperty("--mouse-y", `${y}px`);
+        const opacity = Math.max(0, 1 - (distance / maxSpotlightDistance));
+        card.style.setProperty("--spotlight-opacity", `${opacity}`);
+      } else {
+        card.style.setProperty("--spotlight-opacity", "0");
+      }
+    });
+  });
+  
+  grid.addEventListener("pointerleave", () => {
+    const cards = grid.querySelectorAll(".service-card, .portfolio-card, .timeline-step, .badge-capsule, .estimator-pill");
+    cards.forEach((card) => {
+      card.style.setProperty("--spotlight-opacity", "0");
+    });
   });
 });
 
@@ -188,21 +210,50 @@ function resizeCanvas() {
   createParticles(canvasW, canvasH);
 }
 
+const techLabels = ["GPT-4", "Claude", "Docker", "Python", "LangChain", "Git", "VectorDB", "APIs"];
+
 function createParticles(width, height) {
-  const count = 35;   // fixed ≤40 cap per D-13; no mobile branch
-  particles = Array.from({ length: count }, () => {
+  particles = [];
+  
+  // 1. Central Core Node
+  particles.push({
+    x: width / 2,
+    y: height / 2,
+    isCore: true,
+    radius: 7,
+    label: "Agent Core",
+    pulse: 0
+  });
+
+  // 2. Tech Orbiting Nodes
+  techLabels.forEach((label, idx) => {
+    particles.push({
+      isOrbiting: true,
+      label: label,
+      radius: 4,
+      orbitRadius: 85 + idx * 22,
+      angle: (idx * (Math.PI * 2)) / techLabels.length,
+      speed: 0.0015 + (idx * 0.0003),
+      pulse: 0
+    });
+  });
+
+  // 3. Floating Data Packets
+  const dataCount = 20;
+  for (let i = 0; i < dataCount; i++) {
     const vx = (Math.random() - 0.5) * 0.42;
     const vy = (Math.random() - 0.5) * 0.42;
-    return {
+    particles.push({
       x: Math.random() * width,
       y: Math.random() * height,
       vx,
       vy,
       baseVx: vx,
       baseVy: vy,
-      radius: Math.random() * 1.8 + 1
-    };
-  });
+      radius: Math.random() * 1.5 + 1,
+      isData: true
+    });
+  }
 }
 
 function drawNetwork() {
@@ -214,8 +265,27 @@ function drawNetwork() {
   context.fillStyle = "rgba(8, 10, 10, 0.5)";
   context.fillRect(0, 0, width, height);
 
-  // Update particle positions and apply mouse repel + spring-back
+  // Position Core node at center
+  const coreNode = particles.find(p => p.isCore);
+  if (coreNode) {
+    coreNode.x = width / 2;
+    coreNode.y = height / 2;
+    coreNode.pulse += 0.03;
+  }
+
+  // Update positions
   for (const particle of particles) {
+    if (particle.isCore) continue;
+    
+    if (particle.isOrbiting) {
+      particle.angle += particle.speed;
+      particle.x = (coreNode ? coreNode.x : width / 2) + Math.cos(particle.angle) * particle.orbitRadius;
+      particle.y = (coreNode ? coreNode.y : height / 2) + Math.sin(particle.angle) * particle.orbitRadius;
+      particle.pulse += 0.05;
+      continue;
+    }
+
+    // Standard floating data packets
     particle.x += particle.vx;
     particle.y += particle.vy;
 
@@ -242,26 +312,43 @@ function drawNetwork() {
     particle.vy += (particle.baseVy - particle.vy) * 0.02;
   }
 
-  // k-nearest neighbor line drawing — O(n×k), not O(n²)
-  // k=6 per D-14 (range 5–8); squared distance avoids sqrt in inner loop
+  // Connect Core to Orbiters
+  if (coreNode) {
+    particles.forEach(p => {
+      if (p.isOrbiting) {
+        context.strokeStyle = "rgba(124, 92, 252, 0.15)";
+        context.lineWidth = 1;
+        context.beginPath();
+        context.moveTo(coreNode.x, coreNode.y);
+        context.lineTo(p.x, p.y);
+        context.stroke();
+      }
+    });
+  }
+
+  // Connect nodes to neighbors
   for (let i = 0; i < particles.length; i++) {
     const a = particles[i];
+    if (a.isCore) continue;
+    
+    const maxDist = a.isOrbiting ? 120 : 80;
     const neighbors = [];
     for (let j = 0; j < particles.length; j++) {
       if (i === j) continue;
       const b = particles[j];
+      if (b.isCore) continue;
       const dx = a.x - b.x;
       const dy = a.y - b.y;
       const dist = dx * dx + dy * dy;
-      if (dist < 150 * 150) neighbors.push({ b, dist });
+      if (dist < maxDist * maxDist) neighbors.push({ b, dist });
     }
     neighbors.sort((x, y) => x.dist - y.dist);
-    const k = Math.min(6, neighbors.length);
+    const k = Math.min(a.isOrbiting ? 4 : 3, neighbors.length);
     for (let n = 0; n < k; n++) {
       const d = Math.sqrt(neighbors[n].dist);
-      const opacity = 1 - d / 150;
-      context.strokeStyle = `rgba(124, 92, 252, ${opacity * 0.15})`;
-      context.lineWidth = 1;
+      const opacity = 1 - d / maxDist;
+      context.strokeStyle = `rgba(124, 92, 252, ${opacity * 0.12})`;
+      context.lineWidth = 0.8;
       context.beginPath();
       context.moveTo(a.x, a.y);
       context.lineTo(neighbors[n].b.x, neighbors[n].b.y);
@@ -269,9 +356,41 @@ function drawNetwork() {
     }
   }
 
-  // Draw particles — violet per D-15
+  // Draw nodes & text labels
   for (const particle of particles) {
-    context.fillStyle = "rgba(124, 92, 252, 0.8)";
+    if (particle.isCore) {
+      const glowGrad = context.createRadialGradient(particle.x, particle.y, 2, particle.x, particle.y, particle.radius * 2.5);
+      glowGrad.addColorStop(0, "rgba(124, 92, 252, 0.8)");
+      glowGrad.addColorStop(1, "rgba(124, 92, 252, 0)");
+      context.fillStyle = glowGrad;
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius * 2.5, 0, Math.PI * 2);
+      context.fill();
+
+      context.fillStyle = "#a78bfa";
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      context.fill();
+
+      context.font = "bold 9px monospace";
+      context.fillStyle = "#e2e8f0";
+      context.fillText(particle.label, particle.x - 27, particle.y - 12);
+      continue;
+    }
+
+    if (particle.isOrbiting) {
+      context.fillStyle = "rgba(167, 139, 250, 0.9)";
+      context.beginPath();
+      context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+      context.fill();
+
+      context.font = "8px monospace";
+      context.fillStyle = "rgba(226, 232, 240, 0.75)";
+      context.fillText(particle.label, particle.x + 8, particle.y + 3);
+      continue;
+    }
+
+    context.fillStyle = "rgba(124, 92, 252, 0.4)";
     context.beginPath();
     context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
     context.fill();
@@ -553,3 +672,71 @@ if (navContainer && hoverPill) {
     hoverPill.style.opacity = "0";
   });
 }
+
+// Interactive Scope Estimator Logic
+const estimatorPills = document.querySelectorAll(".estimator-pill");
+const resultTime = document.querySelector("[data-result-time]");
+const resultStack = document.querySelector("[data-result-stack]");
+
+if (estimatorPills.length > 0 && resultTime && resultStack) {
+  let selectedTime = 0;
+  let selectedStack = new Set();
+  
+  estimatorPills.forEach((pill) => {
+    pill.addEventListener("click", () => {
+      const isSelected = pill.classList.toggle("active");
+      const time = parseInt(pill.dataset.time, 10);
+      const stackItems = pill.dataset.stack.split(", ");
+      
+      if (isSelected) {
+        selectedTime += time;
+        stackItems.forEach(item => selectedStack.add(item));
+      } else {
+        selectedTime -= time;
+        selectedStack.clear();
+        document.querySelectorAll(".estimator-pill.active").forEach((activePill) => {
+          activePill.dataset.stack.split(", ").forEach(item => selectedStack.add(item));
+        });
+      }
+      
+      resultTime.textContent = selectedTime > 0 ? `${selectedTime} weeks` : `0 weeks`;
+      resultStack.textContent = selectedStack.size > 0 
+        ? Array.from(selectedStack).join(", ") 
+        : "Select modules to design your stack";
+    });
+  });
+}
+
+// Magnetic CTA Button Pull Animation
+const magneticButtons = document.querySelectorAll(".btn-magnetic");
+
+if (magneticButtons.length > 0 && window.matchMedia("(pointer: fine)").matches) {
+  magneticButtons.forEach((btn) => {
+    const wrap = btn.parentElement;
+    if (!wrap) return;
+    
+    wrap.addEventListener("mousemove", (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+      
+      // Pull button towards cursor (max 14px translate)
+      btn.style.transform = `translate3d(${x * 0.32}px, ${y * 0.32}px, 0)`;
+      
+      // Parallax text label translation
+      const text = btn.querySelector("span");
+      if (text) {
+        text.style.transform = `translate3d(${x * 0.15}px, ${y * 0.15}px, 0)`;
+      }
+    });
+
+    wrap.addEventListener("mouseleave", () => {
+      btn.style.transform = "translate3d(0, 0, 0)";
+      const text = btn.querySelector("span");
+      if (text) {
+        text.style.transform = "translate3d(0, 0, 0)";
+      }
+    });
+  });
+}
+

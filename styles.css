@@ -1536,3 +1536,208 @@ h3 {
     background: rgba(255, 255, 255, 0.07) !important;
   }
 }
+
+/* Project Scope Estimator styles */
+.scope-estimator {
+  margin-top: var(--space-12);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg);
+  background: rgba(13, 17, 18, 0.4);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.estimator-header {
+  text-align: center;
+  max-width: 580px;
+  margin: 0 auto var(--space-8);
+}
+
+.estimator-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+
+.estimator-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.estimator-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.estimator-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  position: relative;
+}
+
+/* Glassmorphic Estimator Pills */
+.estimator-pill {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.estimator-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    250px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+    rgba(124, 92, 252, var(--spotlight-opacity, 0)) 0%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.estimator-pill:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.estimator-pill.active {
+  background: rgba(124, 92, 252, 0.08);
+  border-color: rgba(124, 92, 252, 0.3);
+  box-shadow: 0 0 15px rgba(124, 92, 252, 0.1);
+}
+
+.pill-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.pill-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-accent-light);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.estimator-pill.active .pill-badge {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.estimator-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.01);
+  height: 100%;
+}
+
+.result-header {
+  margin-bottom: var(--space-4);
+}
+
+.result-header span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.result-header strong {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-accent-light);
+  line-height: 1;
+}
+
+.result-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-4) 0;
+}
+
+.result-body span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.result-body p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+}
+
+/* Magnetic Button styles */
+.btn-magnetic-wrap {
+  display: inline-block;
+  position: relative;
+  padding: 15px;
+  margin: -15px;
+}
+
+.btn-magnetic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.btn-magnetic span {
+  display: inline-block;
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Mobile responsive styles for Estimator */
+@media (max-width: 768px) {
+  .estimator-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .scope-estimator {
+    padding: var(--space-6) var(--space-4);
+  }
+}
