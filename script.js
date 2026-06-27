@@ -143,11 +143,11 @@ const counterObserver = new IntersectionObserver(
 document.querySelectorAll("[data-counter-end]").forEach((el) => counterObserver.observe(el));
 
 // Proximity-based mesh grid spotlight sync
-const syncGrids = document.querySelectorAll(".portfolio-grid, .service-grid, .timeline, .integrations-badges, .estimator-options");
+const syncGrids = document.querySelectorAll(".portfolio-grid, .service-grid, .timeline, .integrations-badges, .estimator-options, .blueprint-grid, .blueprint-tabs");
 
 syncGrids.forEach((grid) => {
   grid.addEventListener("pointermove", (e) => {
-    const cards = grid.querySelectorAll(".service-card, .portfolio-card, .timeline-step, .badge-capsule, .estimator-pill");
+    const cards = grid.querySelectorAll(".service-card, .portfolio-card, .timeline-step, .badge-capsule, .estimator-pill, .blueprint-card, .blueprint-tab-btn");
     cards.forEach((card) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -739,4 +739,31 @@ if (magneticButtons.length > 0 && window.matchMedia("(pointer: fine)").matches) 
     });
   });
 }
+
+// AI Agent Blueprint Tab Filter Logic
+const blueprintTabs = document.querySelectorAll(".blueprint-tab-btn");
+const blueprintCards = document.querySelectorAll(".blueprint-card");
+
+if (blueprintTabs.length > 0 && blueprintCards.length > 0) {
+  blueprintTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      blueprintTabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      
+      const category = tab.dataset.tab;
+      
+      blueprintCards.forEach((card) => {
+        if (card.dataset.category === category) {
+          card.style.display = "flex";
+          card.style.animation = "none";
+          card.offsetHeight;
+          card.style.animation = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+}
+
 

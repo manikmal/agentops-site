@@ -335,6 +335,136 @@
             </div>
           </div>
         </div>
+
+        <div class="blueprint-library reveal" id="blueprints">
+          <div class="blueprint-header">
+            <h3 class="blueprint-title">AI Agent Blueprint Library</h3>
+            <p class="blueprint-desc">Explore ready-to-integrate agent architectures optimized for core business operations.</p>
+          </div>
+          
+          <div class="blueprint-tabs">
+            <button class="blueprint-tab-btn active" data-tab="sales">Sales & Outreach</button>
+            <button class="blueprint-tab-btn" data-tab="support">Customer Support</button>
+            <button class="blueprint-tab-btn" data-tab="ops">Operations & Intel</button>
+          </div>
+
+          <div class="blueprint-grid">
+            <!-- Sales Use Cases -->
+            <article class="blueprint-card service-card" data-category="sales">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </div>
+              <h4>Automated PDF Proposals</h4>
+              <p>Generates customized quotes, statements of work, and project budgets dynamically from CRM deal inputs, reducing turnaround time from hours to seconds.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Zapier / Make</span>
+                <span class="meta-tag">Google Docs API</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="sales">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <h4>LinkedIn Prospecting Bot</h4>
+              <p>Scrapes targeted profiles matching criteria, drafts hyper-personalized hook messages using prospect metadata, and automatically queues connection requests.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Python</span>
+                <span class="meta-tag">OpenAI</span>
+                <span class="meta-tag">Phantombuster</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="sales">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <h4>Lost Deal Objections Analyzer</h4>
+              <p>Scans emails and call transcripts of closed-lost opportunities, categorizes objections (pricing, product gap, timing), and reports insights to the product team.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">LlamaIndex</span>
+                <span class="meta-tag">Anthropic</span>
+                <span class="meta-tag">HubSpot / Salesforce</span>
+              </div>
+            </article>
+
+            <!-- Support Use Cases -->
+            <article class="blueprint-card service-card" data-category="support" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              </div>
+              <h4>No-Show Rescheduler Bot</h4>
+              <p>Detects missed calendar appointments, immediately triggers a SMS or WhatsApp message offering 1-click rescheduling links, recovering lost revenue.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Twilio / Meta API</span>
+                <span class="meta-tag">Calendly</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="support" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <h4>Sentiment Escalation Manager</h4>
+              <p>Reads inbound support tickets, runs real-time sentiment analysis, and automatically escalates critical client complaints directly to team leads on Slack.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">LangChain</span>
+                <span class="meta-tag">Zendesk / Intercom</span>
+                <span class="meta-tag">Slack Webhooks</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="support" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+              </div>
+              <h4>Voice-to-CRM Intake Agent</h4>
+              <p>Enables sales reps to dictate raw voice memos from the field, transcribes the audio, extracts structured entities (names, actions, details), and populates fields.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Whisper API</span>
+                <span class="meta-tag">GPT-4o Structured</span>
+              </div>
+            </article>
+
+            <!-- Operations Use Cases -->
+            <article class="blueprint-card service-card" data-category="ops" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <h4>Meeting Scheduler Agent</h4>
+              <p>Negotiates meeting times asynchronously with clients by checking invitee calendars, matching timezone ranges, and auto-booking the slot.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Google Calendar API</span>
+                <span class="meta-tag">Node.js</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="ops" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <h4>Competitor Price Monitor</h4>
+              <p>Automates daily scraping of competitor product directories, flags significant price shifts, and suggests optimal pricing strategies based on demand patterns.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">BeautifulSoup</span>
+                <span class="meta-tag">Python</span>
+                <span class="meta-tag">Telegram Bot</span>
+              </div>
+            </article>
+
+            <article class="blueprint-card service-card" data-category="ops" style="display: none;">
+              <div class="blueprint-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+              </div>
+              <h4>Daily Action Briefing Bot</h4>
+              <p>Crawls active databases and emails each morning to generate a clear, prioritized list of task reminders and follow-ups for the team on Slack.</p>
+              <div class="blueprint-meta">
+                <span class="meta-tag">Make.com</span>
+                <span class="meta-tag">Slack API</span>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section class="section portfolio-section" id="portfolio">
